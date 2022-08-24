@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
 import Weather from "../components/Weather.astro";
+import ShowAllProducts from "../components/Products/ShowAllProducts.vue";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -37,6 +38,11 @@ import Weather from "../components/Weather.astro";
     Weather:
 
     <Weather />
+
+    <br />
+    Vue all products:
+
+    <ShowAllProducts client:load />
   </main>
 </Layout>
 
