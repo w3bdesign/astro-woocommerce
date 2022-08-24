@@ -8,15 +8,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run prettier",
     "prettier": "prettier --write ."
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
     "@astrojs/vue": "^1.0.0",
-    "astro": "^1.0.7",
+    "astro": "^1.0.8",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.5.1",
+    "prettier-plugin-astro": "^0.5.3",
     "vue": "^3.2.37"
   }
 }
