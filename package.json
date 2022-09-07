@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
     "@astrojs/vue": "^1.0.1",
-    "astro": "^1.1.5",
+    "astro": "^1.1.6",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.4",
     "vue": "^3.2.38"
