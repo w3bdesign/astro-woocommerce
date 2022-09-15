@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^2.0.0",
+    "@astrojs/tailwind": "^2.0.1",
     "@astrojs/vercel": "^2.0.0",
     "@astrojs/vue": "^1.0.2",
     "astro": "^1.2.4",
