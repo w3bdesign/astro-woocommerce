@@ -1,16 +1,16 @@
-<template>
-  Dette er en Vue 3 komponent. Data fra Graphql:
-
-  {{ weather }}
-</template>
+<template>Dette er en Vue 3 komponent. Data fra Graphql:</template>
 
 <script setup>
 //import FETCH_ALL_PRODUCTS_QUERY from "@/graphql/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
 //import FETCH_ALL_PRODUCTS_QUERY from "../../graphql/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
 
-const { PUBLIC_GRAPHQL_URL } = import.meta.env;
+import { getAllProducts } from "../../graphql/queries/getAllProducts";
 
-const response = await fetch(PUBLIC_GRAPHQL_URL, {
+const test = await getAllProducts().then(console.log("SSS"));
+
+//const { PUBLIC_GRAPHQL_URL } = import.meta.env;
+
+/*const response = await fetch(PUBLIC_GRAPHQL_URL, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -50,9 +50,9 @@ const response = await fetch(PUBLIC_GRAPHQL_URL, {
   }
 }        `,
   }),
-});
+});*/
 
-const json = await response.json();
+//const json = await response.json();
 
-const weather = json.data;
+//const weather = json.data;
 </script>
