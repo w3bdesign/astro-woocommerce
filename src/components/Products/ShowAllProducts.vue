@@ -1,58 +1,9 @@
-<template>
-  Dette er en Vue 3 komponent. Data fra Graphql:
-
-  {{ weather }}
-</template>
+<template>Dette er en Vue 3 komponent. Data fra Graphql:</template>
 
 <script setup>
-//import FETCH_ALL_PRODUCTS_QUERY from "@/graphql/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
-//import FETCH_ALL_PRODUCTS_QUERY from "../../graphql/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
+import { getAllProducts } from "../../graphql/queries/getAllProducts";
 
-const { PUBLIC_GRAPHQL_URL } = import.meta.env;
+//const test = await getAllProducts().then(console.log("SSS"));
 
-const response = await fetch(PUBLIC_GRAPHQL_URL, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    //query: FETCH_ALL_PRODUCTS_QUERY,
-
-    query: `
-       {
-  products(first: 24) {
-    nodes {
-      databaseId
-      name
-      onSale
-      slug
-      image {
-        sourceUrl
-      }
-      ... on SimpleProduct {
-        databaseId
-        price
-        regularPrice
-        salePrice
-      }
-      ... on VariableProduct {
-        databaseId
-        price
-        regularPrice
-        salePrice
-        variations {
-          nodes {
-            price
-            regularPrice
-            salePrice
-          }
-        }
-      }
-    }
-  }
-}        `,
-  }),
-});
-
-const json = await response.json();
-
-const weather = json.data;
+const test = await getAllProducts().then(console.log("SSS"));
 </script>
