@@ -20,5 +20,9 @@
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.4",
     "vue": "^3.2.39"
+  },
+  "dependencies": {
+    "@nanostores/vue": "^0.6.0",
+    "nanostores": "^0.7.0"
   }
 }
