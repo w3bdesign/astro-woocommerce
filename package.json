@@ -22,6 +22,8 @@
     "vue": "^3.2.39"
   },
   "dependencies": {
+    "@nanostores/vue": "^0.6.0",
+    "nanostores": "^0.7.0",
     "uid": "^2.0.0"
   }
 }
