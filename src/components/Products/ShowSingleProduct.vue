@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { stripHTML, filteredVariantPrice } from "@/utils/functions";
+import { stripHTML, filteredVariantPrice } from "../../utils/functions.js";
 
 export default {
   name: "ShowSingleProduct",
