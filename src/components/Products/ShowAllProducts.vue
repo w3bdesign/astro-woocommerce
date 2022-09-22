@@ -1,5 +1,5 @@
 <template>
- Products:
+  All Products:
   {{ products }}
 </template>
 
