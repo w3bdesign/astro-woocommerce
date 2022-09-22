@@ -2,8 +2,8 @@
   <div>
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      :class="{ disabled: loading }"
-      @click="addProductToCart(product)"
+      :class="{ disabled: button.loading }"
+      @click="addProductToCart(hardcodedItemInfo)"
     >
       ADD TO CART
       <svg
@@ -31,9 +31,17 @@
 
 import { reactive } from "vue";
 
-const loading = reactive(false);
+import { addProductToCart } from "../../stores/cartStore.js";
 
-const addProductToCart = console.log("Clicked!");
+const button = reactive({ loading: false });
+
+const hardcodedItemInfo = {
+    id: 'astronaut-figurine',
+    name: 'Astronaut Figurine',
+    imageSrc: '/images/astronaut-figurine.png',
+  }
+
+
 
 
 </script>
