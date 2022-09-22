@@ -26,47 +26,16 @@
   </div>
 </template>
 
-<script>
-import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION'
+<script setup>
+// TODO Add product to Woocommerce cart
 
-export default {
-  props: {
-    product: { type: [Number, Object], required: true },
-  },
-  data() {
-    return {
-      loading: false,
-      error: '',
-    }
-  },
-  methods: {
-    async addProductToWooCart(product) {
-      const productId = product.databaseId ? product.databaseId : product
-      const productQueryInput = {
-        productId,
-      }
+import { reactive } from "vue";
 
-      try {
-        await this.$apollo
-          .mutate({
-            mutation: ADD_TO_CART_MUTATION,
-            variables: { input: productQueryInput },
-          })
-          .then(() => {
-            this.loading = false
-            this.$apollo.queries.cart.refetch()
-          })
-      } catch (e) {
-        this.error = e
-      }
-    },
-    addProductToCart(product) {
-      this.loading = true
-      this.addProductToWooCart(product)
-      this.$router.push('/cart')
-    },
-  },
-}
+const loading = reactive(false);
+
+const addProductToCart = console.log("Clicked!");
+
+
 </script>
 
 <style scoped>
