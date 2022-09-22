@@ -4,13 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import ShowAllProducts from "../components/Products/ShowAllProducts.vue";
 ---
 
-<Layout title="Welcome to Nuxt Astro">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro Woocommerce</span></h1>
-    <p class="instructions">
-      Check out the <code>src/pages</code> directory to get started.<br />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
+<Layout title="Welcome to Astro Woocommerce">
+  <main>   
     <br />
     Vue all products:
     <ShowAllProducts client:load />
