@@ -35,43 +35,40 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <NuxtLink to="/">
-                      <span
-                        class="text-xl text-white no-underline lg:text-black is-active"
-                      >
-                        Home
-                      </span>
-                    </NuxtLink>
+                    <a
+                      href="/"
+                      class="text-xl text-white no-underline lg:text-black is-active"
+                    >
+                      Home
+                    </a>
                   </li>
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <NuxtLink to="/products">
-                      <span
-                        class="text-xl text-white no-underline lg:text-black"
-                        >Products</span
-                      >
-                    </NuxtLink>
+                    <a
+                      href="/products"
+                      class="text-xl text-white no-underline lg:text-black is-active"
+                    >
+                      Products</a
+                    >
                   </li>
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <NuxtLink to="/categories">
-                      <span
-                        class="text-xl text-white no-underline lg:text-black is-active"
-                        >Categories</span
-                      >
-                    </NuxtLink>
+                  <a
+                      href="/categories"
+                      class="text-xl text-white no-underline lg:text-black is-active"
+                    >
+                    Categories</a>
                   </li>
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <NuxtLink to="/search">
-                      <span
-                        class="text-xl text-white no-underline lg:text-black is-active"
-                        >Search</span
-                      >
-                    </NuxtLink>
+                  <a
+                      href="/search"
+                      class="text-xl text-white no-underline lg:text-black is-active"
+                    >
+                    Search</a>
                   </li>
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
@@ -88,11 +85,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Navbar',
-}
-</script>
+<script setup></script>
 
 <style scoped>
 header {
