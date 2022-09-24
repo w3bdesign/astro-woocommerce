@@ -55,20 +55,22 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                  <a
+                    <a
                       href="/categories"
                       class="text-xl text-white no-underline lg:text-black is-active"
                     >
-                    Categories</a>
+                      Categories</a
+                    >
                   </li>
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                  <a
+                    <a
                       href="/search"
                       class="text-xl text-white no-underline lg:text-black is-active"
                     >
-                    Search</a>
+                      Search</a
+                    >
                   </li>
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"

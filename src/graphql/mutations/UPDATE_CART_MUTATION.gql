@@ -1,4 +1,4 @@
-mutation($input: UpdateItemQuantitiesInput!) {
+mutation ($input: UpdateItemQuantitiesInput!) {
   updateItemQuantities(input: $input) {
     items {
       key

@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { getAllProducts } from "../../graphql/queries/getAllProducts";
+import { getAllProducts } from '../../graphql/queries/getAllProducts'
 
-const products = await getAllProducts();
+const products = await getAllProducts()
 </script>

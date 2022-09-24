@@ -1,11 +1,11 @@
-import { uid } from "uid";
+import { uid } from 'uid'
 
 /**
  * Strips HTML from the inputted string
  * @param {String} description Input text to strip HTML from
  */
 export function stripHTML(string) {
-  return string.replace(/(<([^>]+)>)/gi, "");
+  return string.replace(/(<([^>]+)>)/gi, '')
 }
 
 /**
@@ -14,11 +14,11 @@ export function stripHTML(string) {
  * @param {String} price The inputted price that we need to convert
  */
 export const filteredVariantPrice = (price, side) => {
-  if (side === "right") {
-    return price.substring(price.length, price.indexOf("-")).replace("-", "");
+  if (side === 'right') {
+    return price.substring(price.length, price.indexOf('-')).replace('-', '')
   }
-  return price.substring(0, price.indexOf("-")).replace("-", "");
-};
+  return price.substring(0, price.indexOf('-')).replace('-', '')
+}
 
 /**
  * Prepares the checkout object based on the input data from the checkout form
@@ -38,7 +38,7 @@ export function createCheckoutData(form) {
       postcode: form.postcode,
       email: form.email,
       phone: form.phone,
-      company: form.company,
+      company: form.company
     },
     shipping: {
       firstName: form.firstName,
@@ -51,11 +51,11 @@ export function createCheckoutData(form) {
       postcode: form.postcode,
       email: form.email,
       phone: form.phone,
-      company: form.company,
+      company: form.company
     },
     shipToDifferentAddress: false,
     paymentMethod: form.paymentMethod,
     isPaid: false,
-    transactionId: "test",
-  };
+    transactionId: 'test'
+  }
 }

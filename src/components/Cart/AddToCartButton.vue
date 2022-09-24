@@ -29,21 +29,17 @@
 <script setup>
 // TODO Add product to Woocommerce cart
 
-import { reactive } from "vue";
+import { reactive } from 'vue'
 
-import { addProductToCart } from "../../stores/cartStore.js";
+import { addProductToCart } from '../../stores/cartStore.js'
 
-const button = reactive({ loading: false });
+const button = reactive({ loading: false })
 
 const hardcodedItemInfo = {
-    id: 'astronaut-figurine',
-    name: 'Astronaut Figurine',
-    imageSrc: '/images/astronaut-figurine.png',
-  }
-
-
-
-
+  id: 'astronaut-figurine',
+  name: 'Astronaut Figurine',
+  imageSrc: '/images/astronaut-figurine.png'
+}
 </script>
 
 <style scoped>
