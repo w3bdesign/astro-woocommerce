@@ -1,7 +1,8 @@
 ---
-import MobileMenu from "./MobileMenu.vue";
-import Cart from "../Cart/Cart.vue"
+import MobileMenu from "../components/Header/MobileMenu.vue"
+import CartIcon from "../components/Header/CartIcon.vue"
 ---
+
 <div>
   <header
     role="banner"
@@ -78,7 +79,7 @@ import Cart from "../Cart/Cart.vue"
                 <li
                   class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                 >
-                  <Cart class="-mr-4" />
+                  <CartIcon class="-mr-4" />
                 </li>
               </ul>
             </nav>

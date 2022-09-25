@@ -23,7 +23,7 @@
         </li>
         <li class="flex justify-center mt-6 text-lg linkStyleCart">
           <a href="/cart" @click="displayMobileMenu">
-            <LayoutCart />
+            <CartIcon />
           </a>
         </li>
       </ul>
@@ -49,6 +49,7 @@
 </template>
 
 <script setup>
+import CartIcon from "./CartIcon.vue"
 // Setup mobile menu
 </script>
 
@@ -81,7 +82,7 @@
   top: 1em;
 }
 .burger:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 150%;
@@ -98,7 +99,7 @@
 .burger .burger-lines:before {
   pointer-events: none;
   display: block;
-  content: '';
+  content: "";
   width: 100%;
   border-radius: 0.25em;
   background-color: #000;
