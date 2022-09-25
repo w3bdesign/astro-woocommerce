@@ -51,6 +51,8 @@
 <script setup>
 import CartIcon from "./CartIcon.vue"
 // Setup mobile menu
+
+// Use Headless UI with this? https://headlessui.com/vue/menu
 </script>
 
 <style scoped>
