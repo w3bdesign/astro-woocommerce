@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.7.1",
+    "@headlessui/vue": "^1.7.2",
     "@nanostores/vue": "^0.6.0",
     "nanostores": "^0.7.0",
     "uid": "^2.0.0"
