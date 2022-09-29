@@ -1,12 +1,128 @@
 <template>
   <div class="relative">
+
+
+
+    <Menu as="div" class="relative inline-block text-left">
+      <div>
+        <MenuButton
+          class="burger burger-squeeze burger-lines inline-flex w-full justify-center rounded-md  px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+        >
+         
+          <div class="burger-lines"></div>
+         
+        </MenuButton>
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <transition
+        enter-active-class="transition duration-100 ease-out"
+        enter-from-class="transform scale-95 opacity-0"
+        enter-to-class="transform scale-100 opacity-100"
+        leave-active-class="transition duration-75 ease-in"
+        leave-from-class="transform scale-100 opacity-100"
+        leave-to-class="transform scale-95 opacity-0"
+      >
+        <MenuItems
+          class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        >
+          <div class="px-1 py-1">
+            <MenuItem v-slot="{ active }">
+              <a href="/" > Home </a>
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <button
+                :class="[
+                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
+                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                ]"
+              >
+               
+                Duplicate
+              </button>
+            </MenuItem>
+          </div>
+          <div class="px-1 py-1">
+            <MenuItem v-slot="{ active }">
+              <button
+                :class="[
+                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
+                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                ]"
+              >
+               
+                Archive
+              </button>
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <button
+                :class="[
+                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
+                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                ]"
+              >
+               
+                Move
+              </button>
+            </MenuItem>
+          </div>
+
+          <div class="px-1 py-1">
+            <MenuItem v-slot="{ active }">
+              <button
+                :class="[
+                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
+                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                ]"
+              >
+               
+                Delete
+              </button>
+            </MenuItem>
+          </div>
+        </MenuItems>
+      </transition>
+    </Menu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div
-      v-if="!firstRender"
-      class="fixed top-0 left-0 w-screen mt-40 bg-white h-full animate__animated z-50"
-      :class="{
-        animate__fadeInLeft: expandedMenu,
-        animate__fadeOutRight: !expandedMenu && !firstRender
-      }"
+     
     >
       <ul>
         <li class="text-xl linkStyle">
@@ -51,18 +167,12 @@
 <script setup>
 import CartIcon from "./CartIcon.vue"
 
-
 // Setup mobile menu
 
 // Use Headless UI with this? https://headlessui.com/vue/menu
 // https://www.youtube.com/watch?v=qJnIJa-cF2M
 
-
-
-
-
-
-
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue"
 </script>
 
 <style scoped>
