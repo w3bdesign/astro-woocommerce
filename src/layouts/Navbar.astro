@@ -17,13 +17,9 @@ import CartIcon from "../components/Header/CartIcon.vue"
             aria-label="Nettbutikk logo"
             src="/svg/Logo.svg"
           />
-          
         </div>
-       
-        
       </div>
       <MobileMenu client:load />
-
       <div class="hidden lg:w-1/12 lg:block"></div>
       <div
         id="nav-content"
@@ -83,7 +79,7 @@ import CartIcon from "../components/Header/CartIcon.vue"
                 <li
                   class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                 >
-                  <CartIcon class="-mr-4" />
+                  <CartIcon class="-mr-4" client:load />
                 </li>
               </ul>
             </nav>
