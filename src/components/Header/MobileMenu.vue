@@ -1,6 +1,6 @@
 <template>
-  <div class="relative">
-    <Menu as="div" class="relative inline-block text-left">
+  <div class="mt-8 lg:hidden">
+    <Menu as="div">
       <div>
         <MenuButton
           class="burger burger-squeeze burger-lines inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
@@ -23,23 +23,23 @@
           <div class="px-1 py-1">
             <ul>
               <MenuItem v-slot="{ active }">
-                <li class="text-xl linkStyle">
+                <li :class="[active ? 'linkStyleActive' : 'linkStyle']">
                   <a href="/"> Home </a>
                 </li>
               </MenuItem>
               <MenuItem v-slot="{ active }">
-                <li class="text-xl linkStyle">
+                <li :class="[active ? 'linkStyleActive' : 'linkStyle']">
                   <a href="/products"> Products </a>
                 </li>
               </MenuItem>
 
               <MenuItem v-slot="{ active }">
-                <li class="text-xl linkStyle">
+                <li :class="[active ? 'linkStyleActive' : 'linkStyle']">
                   <a href="/categories"> Categories </a>
                 </li>
               </MenuItem>
               <MenuItem v-slot="{ active }">
-                <li class="text-xl linkStyle">
+                <li :class="[active ? 'linkStyleActive' : 'linkStyle']">
                   <a href="/search"> Search </a>
                 </li>
               </MenuItem>
@@ -73,7 +73,11 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue"
 <style scoped>
 /* Style for mobile menu links */
 .linkStyle {
-  @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow-md rounded;
+  @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow-md rounded text-xl;
+}
+
+.linkStyleActive {
+  @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow-md rounded bg-violet-500 text-white text-xl;
 }
 
 .linkStyleCart {
