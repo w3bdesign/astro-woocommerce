@@ -30,7 +30,7 @@
               </p>
               <p class="pt-1 pl-8 mt-4 text-2xl text-gray-900 line-through">
                 <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, "right") }}</span
+                  {{ filteredVariantPrice(product.price, 'right') }}</span
                 >
                 <span v-else>{{ product.regularPrice }}</span>
               </p>
@@ -77,23 +77,23 @@
 </template>
 
 <script>
-import { stripHTML, filteredVariantPrice } from "../../utils/functions.js";
+import { stripHTML, filteredVariantPrice } from '../../utils/functions.js'
 
 export default {
-  name: "ShowSingleProduct",
+  name: 'ShowSingleProduct',
   props: {
-    product: { type: Object, required: true },
+    product: { type: Object, required: true }
   },
   data() {
     return {
       // Set default value
-      variationProduct: 18,
-    };
+      variationProduct: 18
+    }
   },
 
   methods: {
     stripHTML,
-    filteredVariantPrice,
-  },
-};
+    filteredVariantPrice
+  }
+}
 </script>

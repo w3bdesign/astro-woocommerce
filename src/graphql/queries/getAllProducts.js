@@ -1,4 +1,4 @@
-import { fetchAPI } from "../../lib/api";
+import { fetchAPI } from '../../lib/api'
 
 export async function getAllProducts() {
   const data = await fetchAPI(`
@@ -34,7 +34,7 @@ export async function getAllProducts() {
       }
     }
   }  
-    `);
+    `)
 
-  return data?.products;
+  return data?.products
 }

@@ -1,4 +1,4 @@
-mutation($input: AddToCartInput!) {
+mutation ($input: AddToCartInput!) {
   addToCart(input: $input) {
     cartItem {
       key

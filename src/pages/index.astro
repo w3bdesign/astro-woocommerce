@@ -2,18 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 
 import ShowAllProducts from "../components/Products/ShowAllProducts.vue";
-import AddToCartButton from '../components/Cart/AddToCartButton.vue';
 ---
 
 <Layout title="Welcome to Astro Woocommerce">
-  <main>   
+  <main>
+    <h1>Welcome to <span class="text-gradient">Astro Woocommerce</span></h1>
     <br />
     Vue all products:
     <ShowAllProducts client:load />
-
-    <br />
-    Add to cart:
-    <AddToCartButton client:load />
   </main>
 </Layout>
 
