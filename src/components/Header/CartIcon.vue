@@ -6,8 +6,8 @@
       >
     </div>
     <div v-else>
-      <NuxtLink to="/cart">
-        <transition name="cart">
+      <transition name="cart">
+        <a href="/cart">
           <span
             v-if="cartLength"
             class="text-xl text-white no-underline lg:text-black is-active"
@@ -16,26 +16,27 @@
               alt="Cart icon"
               class="h-12 ml-4 lg:ml-2"
               aria-label="Cart"
-              src="../../../public/svg/Cart.svg"
+              src="/svg/Cart.svg"
           /></span>
-        </transition>
-        <transition name="cart">
-          <div v-if="cartLength">
-            <span
-              class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
-            >
-              {{ cartLength }}
-            </span>
-            <span>Total: {{ subTotal }}</span>
-          </div>
-        </transition>
-      </NuxtLink>
+        </a>
+      </transition>
+
+      <transition name="cart">
+        <div v-if="cartLength">
+          <span
+            class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
+          >
+            {{ cartLength }}
+          </span>
+          <span>Total: {{ subTotal }}</span>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
 
 <script setup>
-  // Default values for testing
+// Default values for testing
 const remoteError = false
 
 const cartLength = 1
