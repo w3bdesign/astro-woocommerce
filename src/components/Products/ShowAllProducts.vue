@@ -15,7 +15,7 @@
               :src="productImage(product)"
             />
             <div class="flex justify-center pt-3">
-              <p class="text-2xl font-bold text-center cursor-pointer">
+              <p class="text-xl font-bold text-center cursor-pointer">
                 {{ product.name }}
               </p>
             </div>

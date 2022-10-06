@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Card from "../components/Card.astro"
+
+import ShowAllProducts from "@/components/Products/ShowAllProducts.vue"
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Products">
   <main>
-    <h1>Products page</h1>
-    <ul role="list" class="link-card-grid">
-      <Card title="Products" body="Products page" />
-    </ul>
+    <h1 class="text-3xl text-center font-bold p-6">Products page</h1>
+    <ShowAllProducts client:load />
   </main>
 </Layout>
