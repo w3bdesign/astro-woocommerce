@@ -1,14 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro"
 
-import ShowAllProducts from "../components/Products/ShowAllProducts.vue"
+import ShowAllProducts from "@/components/Products/ShowAllProducts.vue"
+import Hero from "@/components/Index/Hero.vue"
 ---
 
 <Layout title="Welcome to Astro Woocommerce">
   <main>
-    <h1>Welcome to <span class="text-gradient">Astro Woocommerce</span></h1>
-    <br />
-    Vue all products:
+    <Hero />
     <ShowAllProducts client:load />
   </main>
 </Layout>
