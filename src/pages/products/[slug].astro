@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import ShowSingleProduct from "@/components/Products/ShowSingleProduct.vue"
+
+const { slug } = Astro.params
+---
+
+<Layout title="Welcome to Single Products">
+  <main>
+    <h1 class="text-3xl text-center font-bold p-6">Single Product page</h1>
+    <p>Post slug: {slug}</p>
+    <ShowSingleProduct slug={slug} client:load />
+  </main>
+</Layout>
