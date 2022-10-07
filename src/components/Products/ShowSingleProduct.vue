@@ -1,4 +1,5 @@
 <template>
+  ID as prop: {{ id }} - Slug as prop: {{ slug }}
   <div v-if="product">
     <section>
       <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
@@ -30,7 +31,7 @@
               </p>
               <p class="pt-1 pl-8 mt-4 text-2xl text-gray-900 line-through">
                 <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, 'right') }}</span
+                  {{ filteredVariantPrice(product.price, "right") }}</span
                 >
                 <span v-else>{{ product.regularPrice }}</span>
               </p>
@@ -63,11 +64,11 @@
               </select>
             </p>
             <div class="pt-1 mt-2">
-              <CartAddToCartButton
+              <AddToCartButton
                 v-if="product.variations"
                 :product="variationProduct"
               />
-              <CartAddToCartButton v-else :product="product" />
+              <AddToCartButton v-else :product="product" />
             </div>
           </div>
         </div>
@@ -76,24 +77,10 @@
   </div>
 </template>
 
-<script>
-import { stripHTML, filteredVariantPrice } from '../../utils/functions.js'
+<script setup>
+import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
-export default {
-  name: 'ShowSingleProduct',
-  props: {
-    product: { type: Object, required: true }
-  },
-  data() {
-    return {
-      // Set default value
-      variationProduct: 18
-    }
-  },
+const props = defineProps(["id", "slug"])
 
-  methods: {
-    stripHTML,
-    filteredVariantPrice
-  }
-}
+console.log("Props:", props)
 </script>
