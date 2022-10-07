@@ -1,5 +1,6 @@
 <template>
-  <div v-if="props">
+  ID as prop: {{ id }} - Slug as prop: {{ slug }}
+  <div v-if="product">
     <section>
       <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
         <div
@@ -79,8 +80,7 @@
 <script setup>
 import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
-const props = defineProps({
-  id: Number,
-  slug: String
-})
+const props = defineProps(["id", "slug"])
+
+console.log("Props:", props)
 </script>
