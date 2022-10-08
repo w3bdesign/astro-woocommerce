@@ -1,5 +1,4 @@
 <template>
-  ID as prop: {{ id }} - Slug as prop: {{ slug }}
   <div v-if="product">
     <section>
       <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
@@ -78,9 +77,15 @@
 </template>
 
 <script setup>
+import { getSingleProduct } from "@/graphql/queries/getSingleProduct"
+
+import { filteredVariantPrice, stripHTML } from "@/utils/functions"
+
 import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
 const props = defineProps(["id", "slug"])
 
-console.log("Props:", props)
+const product = await getSingleProduct(props.id)
+
+const variationProduct = 18 // Hardcoded variation ID
 </script>
