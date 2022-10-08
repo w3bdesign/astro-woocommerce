@@ -79,11 +79,13 @@
 <script setup>
 import { getSingleProduct } from "@/graphql/queries/getSingleProduct"
 
-import { stripHTML } from "@/utils/functions"
+import { filteredVariantPrice, stripHTML } from "@/utils/functions"
 
 import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
 const props = defineProps(["id", "slug"])
 
 const product = await getSingleProduct(props.id)
+
+const variationProduct = 18 // Hardcoded variation ID
 </script>
