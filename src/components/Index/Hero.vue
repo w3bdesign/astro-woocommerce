@@ -14,5 +14,5 @@
 </template>
 
 <script setup>
-const heroImage = "../../../public/images/Hero.jpg"
+const heroImage = "/images/Hero.jpg"
 </script>
