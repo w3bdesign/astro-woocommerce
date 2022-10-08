@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_astro-woocommerce&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_astro-woocommerce)
+
 # This is currently a work in progress
 
 ## Astro/Vue 3 Ecommerce site with WooCommerce backend
