@@ -9,9 +9,6 @@ const { id, slug } = Astro.params
 <Layout title="Welcome to Single Products">
   <main>
     <h1 class="text-3xl text-center font-bold p-6">Single Product page</h1>
-    <p>Post id: {id}</p>
-    <p>Post slug: {slug}</p>
-    <br />
-    <ShowSingleProduct id={id}  slug={slug} client:load />
+    <ShowSingleProduct id={id} slug={slug} client:load />
   </main>
 </Layout>
