@@ -31,7 +31,7 @@
 
 import { reactive } from 'vue'
 
-import { addProductToCart } from '../../stores/cartStore.js'
+import { addProductToCart } from '@/stores/cartStore.js'
 
 const button = reactive({ loading: false })
 
