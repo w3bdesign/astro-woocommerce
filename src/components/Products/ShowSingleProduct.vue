@@ -85,7 +85,5 @@ import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
 const props = defineProps(["id", "slug"])
 
-console.log("Props:", props)
-
 const product = await getSingleProduct(props.id)
 </script>

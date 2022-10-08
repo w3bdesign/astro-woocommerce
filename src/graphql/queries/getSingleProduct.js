@@ -71,8 +71,7 @@ export async function getSingleProduct(id) {
     }
   }
     `,
-   //{variables: {id: 12}}
-   {variables: {id: 12}}
+    { variables: { id } }
   )
 
   return data?.product
