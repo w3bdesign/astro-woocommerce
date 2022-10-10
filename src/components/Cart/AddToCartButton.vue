@@ -2,6 +2,12 @@
   <div>
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
+      @click="test()"
+    >
+      TEST
+    </button>
+    <button
+      class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
       :class="{ disabled: button.loading }"
       @click="addProductToCart(hardcodedItemInfo)"
     >
@@ -29,16 +35,21 @@
 <script setup>
 // TODO Add product to Woocommerce cart
 
-import { reactive } from 'vue'
+import { reactive } from "vue"
 
-import { addProductToCart } from '@/stores/cartStore.js'
+import { addProductToCart } from "@/stores/cartStore.js"
 
 const button = reactive({ loading: false })
 
 const hardcodedItemInfo = {
-  id: 'astronaut-figurine',
-  name: 'Astronaut Figurine',
-  imageSrc: '/images/astronaut-figurine.png'
+  id: "astronaut-figurine",
+  name: "Astronaut Figurine",
+  imageSrc: "/images/astronaut-figurine.png"
+}
+
+function test() {
+  console.log("Test!")
+  alert("Test!")
 }
 </script>
 
