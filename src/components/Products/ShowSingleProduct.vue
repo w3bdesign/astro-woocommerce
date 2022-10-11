@@ -63,11 +63,13 @@
               </select>
             </p>
             <div class="pt-1 mt-2">
+              <!-- Doesn't work?`-->
               <AddToCartButton
                 v-if="product.variations"
                 :product="variationProduct"
+                client:visible
               />
-              <AddToCartButton v-else :product="product" />
+              <AddToCartButton v-else :product="product" client:visible/>
             </div>
           </div>
         </div>
