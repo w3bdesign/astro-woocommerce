@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 
 import SingleProduct from "@/components/Products/SingleProduct.vue"
-import AddToCartButton from "@/components/Cart/AddToCartButton.vue";
+import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
 const { id, slug } = Astro.params
 ---
@@ -11,6 +11,5 @@ const { id, slug } = Astro.params
   <main>
     <h1 class="text-3xl text-center font-bold p-6">Single Product page</h1>
     <SingleProduct id={id} slug={slug} client:load />
-    <AddToCartButton client:load />
   </main>
 </Layout>
