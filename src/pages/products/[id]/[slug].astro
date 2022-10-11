@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
-import ShowSingleProduct from "@/components/Products/ShowSingleProduct.vue"
+import SingleProduct from "@/components/Products/SingleProduct.vue"
 import AddToCartButton from "@/components/Cart/AddToCartButton.vue";
 
 const { id, slug } = Astro.params
@@ -10,7 +10,7 @@ const { id, slug } = Astro.params
 <Layout title="Welcome to Single Products">
   <main>
     <h1 class="text-3xl text-center font-bold p-6">Single Product page</h1>
-    <ShowSingleProduct id={id} slug={slug} client:visible />
-    <AddToCartButton client:visible />
+    <SingleProduct id={id} slug={slug} client:load />
+    <AddToCartButton client:load />
   </main>
 </Layout>
