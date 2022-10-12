@@ -20,7 +20,6 @@
           /></span>
         </a>
       </transition>
-
       <transition name="cart">
         <div v-if="cartLength">
           <span
@@ -36,6 +35,16 @@
 </template>
 
 <script setup>
+import { getCart } from "@/graphql/queries/getCart"
+
+import { filteredVariantPrice } from "@/utils/functions"
+
+const testCart = await getCart()
+
+console.log("Test Cart: ", testCart)
+
+
+
 // Default values for testing
 const remoteError = false
 
