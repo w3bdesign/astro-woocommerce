@@ -1,13 +1,14 @@
 <template>
   <div>
+  Product: {{ props.product }}
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      :class="{ disabled: button.loading }"
-      @click="addProductToCart(hardcodedItemInfo)"
+      :class="{ disabled: state.loading }"
+      @click="addProduct(props.product)"
     >
       ADD TO CART
       <svg
-        v-if="loading"
+        v-if="state.loading"
         class="absolute -mt-6 -ml-2 animate-spin"
         width="25"
         height="25"
@@ -33,12 +34,36 @@ import { reactive } from "vue"
 
 import { addProductToCart } from "@/stores/cartStore.js"
 
-const button = reactive({ loading: false })
+const state = reactive({ loading: false })
+
+const props = defineProps(["product"])
 
 const hardcodedItemInfo = {
   id: "astronaut-figurine",
   name: "Astronaut Figurine",
   imageSrc: "/images/astronaut-figurine.png"
+}
+
+const addProduct = (product) => {
+  state.loading = true
+  setTimeout(() => (state.loading = false), 1000)
+
+  const productId = product.databaseId ? product.databaseId : product
+
+  console.log("Data: ", product)
+  console.log("productId: ", productId)
+
+
+
+
+
+
+
+
+
+
+
+  //addProductToCart(hardcodedItemInfo)
 }
 </script>
 
