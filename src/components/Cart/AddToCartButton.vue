@@ -1,6 +1,6 @@
 <template>
   <div>
-  Product: {{ props.product }}
+    Product: {{ props.product }}
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
       :class="{ disabled: state.loading }"
@@ -32,7 +32,9 @@
 
 import { reactive } from "vue"
 
-import { addProductToCart } from "@/stores/cartStore.js"
+//import { addProductToCart } from "@/stores/cartStore.js"
+
+import { addToCart } from "@/graphql/mutations/addToCart.js"
 
 const state = reactive({ loading: false })
 
@@ -44,24 +46,20 @@ const hardcodedItemInfo = {
   imageSrc: "/images/astronaut-figurine.png"
 }
 
-const addProduct = (product) => {
+const addProduct = product => {
   state.loading = true
   setTimeout(() => (state.loading = false), 1000)
 
   const productId = product.databaseId ? product.databaseId : product
+  const productQueryInput = {
+    productId
+  }
 
-  console.log("Data: ", product)
-  console.log("productId: ", productId)
-
-
-
-
-
-
-
-
-
-
+  try {
+    addToCart(productQueryInput).then(() => console.log("Vi kom hit"))
+  } catch (e) {
+    console.log("Error: ", e)
+  }
 
   //addProductToCart(hardcodedItemInfo)
 }
