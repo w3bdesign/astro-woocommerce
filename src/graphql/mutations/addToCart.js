@@ -1,7 +1,6 @@
 import { fetchAPI } from "../../lib/api"
 
 export async function addToCart(product) {
-
   console.log("Gql product: ", product)
 
   const data = await fetchAPI(
@@ -68,5 +67,6 @@ export async function addToCart(product) {
     { variables: { input: product } }
   )
 
-  return data?.cart
+  console.log("Cart data from gql: ", data.addToCart.cartItem)
+  return data?.addToCart
 }
