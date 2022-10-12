@@ -40,11 +40,6 @@ const hardcodedItemInfo = {
   name: "Astronaut Figurine",
   imageSrc: "/images/astronaut-figurine.png"
 }
-
-function test() {
-  console.log("Test!")
-  alert("Test!")
-}
 </script>
 
 <style scoped>
