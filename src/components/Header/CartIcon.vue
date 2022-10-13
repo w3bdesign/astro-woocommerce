@@ -43,8 +43,6 @@ const testCart = await getCart()
 
 console.log("Test Cart: ", testCart)
 
-
-
 // Default values for testing
 const remoteError = false
 
