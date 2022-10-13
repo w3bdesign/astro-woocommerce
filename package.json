@@ -13,8 +13,13 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
+<<<<<<< HEAD
     "@astrojs/tailwind": "^2.1.0",
     "@astrojs/vercel": "2.1.1",
+=======
+    "@astrojs/tailwind": "^2.0.2",
+    "@astrojs/vercel": "^2.1.1",
+>>>>>>> parent of f76dec7 (Update dependency @astrojs/tailwind to ^2.1.0)
     "@astrojs/vue": "^1.1.0",
     "astro": "1.4.7",
     "prettier": "^2.7.1",
