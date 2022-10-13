@@ -1,13 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro"
 
-
+import AllProducts from "@/components/Products/AllProducts.vue"
 import Hero from "@/components/Index/Hero.vue"
 ---
 
 <Layout title="Welcome to Astro Woocommerce">
   <main>
     <Hero />
-    
+    <AllProducts client:load />
   </main>
 </Layout>
