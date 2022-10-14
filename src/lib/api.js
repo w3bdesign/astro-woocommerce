@@ -1,6 +1,9 @@
 export async function fetchAPI(query, { variables } = {}) {
   const { PUBLIC_GRAPHQL_URL } = import.meta.env
-  const headers = { "Content-Type": "application/json" }
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Credentials": true
+  }
 
   const res = await fetch(PUBLIC_GRAPHQL_URL, {
     method: "POST",
@@ -12,7 +15,7 @@ export async function fetchAPI(query, { variables } = {}) {
 
   const json = await res.json()
 
- // console.log("Json is: ", json)
+  // console.log("Json is: ", json)
 
   if (json.errors) {
     console.log(JSON.stringify(json.errors))
