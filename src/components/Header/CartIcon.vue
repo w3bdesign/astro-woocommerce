@@ -41,7 +41,9 @@ import { filteredVariantPrice } from "@/utils/functions"
 
 const testCart = await getCart()
 
-console.log("Test Cart: ", testCart)
+console.log("Cart nodes: ", testCart.contents.nodes)
+
+console.log("Cart length: ", testCart.contents.nodes.length)
 
 // Default values for testing
 const remoteError = false

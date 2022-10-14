@@ -1,6 +1,7 @@
 <template>
   <div>
-    Product: <pre>{{ props.product }}</pre>
+    Product:
+    <pre>{{ props.product }}</pre>
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
       :class="{ disabled: state.loading }"
@@ -28,8 +29,6 @@
 </template>
 
 <script setup>
-// TODO Add product to Woocommerce cart
-
 import { reactive } from "vue"
 
 //import { addProductToCart } from "@/stores/cartStore.js"
