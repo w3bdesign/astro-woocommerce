@@ -46,16 +46,21 @@ const hardcodedItemInfo = {
 }
 
 const addProduct = product => {
-  state.loading = true
-  setTimeout(() => (state.loading = false), 1000)
+  //state.loading = true
+
+  //setTimeout(() => (state.loading = false), 1000)
 
   const productId = product.databaseId ? product.databaseId : product
   const productQueryInput = {
     productId
   }
 
+  
+
   try {
     addToCart(productQueryInput).then(() => console.log("Vi kom hit"))
+    console.log("Vi kom hit også")
+    //addProductToCart(hardcodedItemInfo)
   } catch (e) {
     console.log("Error: ", e)
   }
