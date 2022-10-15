@@ -51,11 +51,13 @@
 </template>
 
 <script setup>
-import { getAllProducts } from "@/graphql/queries/getAllProducts"
+import { getAllProducts } from "@/graphql/queries/getAllProductsAxios"
 
 import { filteredVariantPrice } from "@/utils/functions"
 
 const allProducts = await getAllProducts()
+
+
 
 const productImage = product =>
   product.image ? product.image.sourceUrl : process.env.placeholderSmallImage
