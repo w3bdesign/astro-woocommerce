@@ -11,11 +11,7 @@ export async function fetchAPI(query, { variables } = {}) {
     body: JSON.stringify({ query, variables })
   })
 
-  //console.log("Res is: ", res)
-
   const json = await res.json()
-
-  // console.log("Json is: ", json)
 
   if (json.errors) {
     console.log(JSON.stringify(json.errors))
