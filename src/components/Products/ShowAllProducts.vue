@@ -58,8 +58,6 @@ import { filteredVariantPrice } from "@/utils/functions"
 
 const allProducts = await getAllProducts()
 
-console.log("All products xx:", allProducts)
-
 const productImage = product =>
   product.image ? product.image.sourceUrl : process.env.placeholderSmallImage
 </script>
