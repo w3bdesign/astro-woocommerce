@@ -5,6 +5,7 @@ export async function fetchAxios(query, { variables } = {}) {
 
   const headers = {
     "content-type": "application/json"
+   
   }
 
   return axios({
