@@ -5,13 +5,13 @@ export async function fetchAxios(query, { variables } = {}) {
 
   const headers = {
     "content-type": "application/json"
-   
   }
 
   return axios({
     url: PUBLIC_GRAPHQL_URL,
     method: "POST",
     headers: headers,
+    withCredentials: true,
     data: {
       query: query,
       variables: variables
