@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import { getAllProducts } from "@/graphql/queries/getAllProducts"
+import { getAllProducts } from "@/graphql/queries/getAllProductsAxios"
 
 import { filteredVariantPrice } from "@/utils/functions"
 

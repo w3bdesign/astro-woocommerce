@@ -1,13 +1,15 @@
 <template>
   <div>
+    Product:
+    <pre>{{ props.product }}</pre>
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      :class="{ disabled: button.loading }"
-      @click="addProductToCart(hardcodedItemInfo)"
+      :class="{ disabled: state.loading }"
+      @click="addProduct(props.product)"
     >
       ADD TO CART
       <svg
-        v-if="loading"
+        v-if="state.loading"
         class="absolute -mt-6 -ml-2 animate-spin"
         width="25"
         height="25"
@@ -27,13 +29,15 @@
 </template>
 
 <script setup>
-// TODO Add product to Woocommerce cart
-
 import { reactive } from "vue"
 
-import { addProductToCart } from "@/stores/cartStore.js"
+//import { addProductToCart } from "@/stores/cartStore.js"
 
-const button = reactive({ loading: false })
+import { addToCart } from "@/graphql/mutations/addToCart.js"
+
+const state = reactive({ loading: false })
+
+const props = defineProps(["product"])
 
 const hardcodedItemInfo = {
   id: "astronaut-figurine",
@@ -41,9 +45,27 @@ const hardcodedItemInfo = {
   imageSrc: "/images/astronaut-figurine.png"
 }
 
-function test() {
-  console.log("Test!")
-  alert("Test!")
+const addProduct = product => {
+  //state.loading = true
+
+  //setTimeout(() => (state.loading = false), 1000)
+
+  const productId = product.databaseId ? product.databaseId : product
+  const productQueryInput = {
+    productId
+  }
+
+  
+
+  try {
+    addToCart(productQueryInput).then(() => console.log("Vi kom hit"))
+    console.log("Vi kom hit også")
+    //addProductToCart(hardcodedItemInfo)
+  } catch (e) {
+    console.log("Error: ", e)
+  }
+
+  //addProductToCart(hardcodedItemInfo)
 }
 </script>
 

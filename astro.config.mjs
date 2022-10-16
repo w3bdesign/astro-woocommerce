@@ -7,7 +7,17 @@ import image from "@astrojs/image"
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [vue(), tailwind(), sitemap(), image()],
+  integrations: [
+    vue(),
+    tailwind(),
+    sitemap({
+      customPages: [
+        "https://astro-woocommerce.vercel.app",
+        "https://astro-woocommerce.vercel.app/products"
+      ]
+    }),
+    image()
+  ],
   output: "server",
   adapter: vercel(),
   site: "https://astro-woocommerce.vercel.app"

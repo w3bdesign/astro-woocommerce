@@ -20,7 +20,6 @@
           /></span>
         </a>
       </transition>
-
       <transition name="cart">
         <div v-if="cartLength">
           <span
@@ -36,6 +35,20 @@
 </template>
 
 <script setup>
+import { getCart } from "@/graphql/queries/getCart"
+
+import { filteredVariantPrice } from "@/utils/functions"
+
+//const testCart = await getCart()
+
+/*
+setInterval(async () => {
+  console.log("Calling getCart:")
+  const testCart = await getCart()
+  console.log("Cart nodes: ", testCart.contents)
+  console.log("Cart length: ", testCart.contents.nodes.length)
+}, 6000)*/
+
 // Default values for testing
 const remoteError = false
 
