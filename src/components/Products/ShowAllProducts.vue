@@ -1,5 +1,6 @@
 <template>
   <section>
+    All products: {{ allProducts }}
     <div class="flex flex-wrap items-center">
       <template v-for="singleProduct in allProducts">
         <template v-for="product in singleProduct">
@@ -57,7 +58,7 @@ import { filteredVariantPrice } from "@/utils/functions"
 
 const allProducts = await getAllProducts()
 
-
+console.log("All products xx:", allProducts)
 
 const productImage = product =>
   product.image ? product.image.sourceUrl : process.env.placeholderSmallImage

@@ -36,6 +36,5 @@ export async function getAllProducts() {
   }  
     `)
 
- 
   return data?.products
 }
