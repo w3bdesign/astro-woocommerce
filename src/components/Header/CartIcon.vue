@@ -53,7 +53,8 @@ setInterval(async () => {
 
   if (testCart.contents.nodes[0]) {
     cartLength.value = testCart.contents.nodes[0].quantity
-    subTotal.value = testCart.contents.nodes[0].subTotal
+    subTotal.value = testCart.contents.nodes[0].total
+    subTotal.value = subTotal.value.replace("kr", "kr ")
   }
 }, 6000)
 
