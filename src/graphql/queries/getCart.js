@@ -1,7 +1,7 @@
-import { fetchAPI } from "../../lib/api"
+import { fetchAxios } from "../../lib/axios"
 
 export async function getCart() {
-  const data = await fetchAPI(`
+  const data = await fetchAxios(`
   {
     cart {
       contents {
