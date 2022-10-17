@@ -65,9 +65,5 @@ export async function addToCart(product) {
     { variables: { input: product } }
   )
 
-
-
-  console.log("Addtocart data: ", data)
-
   return data?.addToCart
 }

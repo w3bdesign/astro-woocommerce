@@ -25,7 +25,7 @@
           <span
             class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
           >
-            {{ cartLength }}
+            Cart length: {{ cartLength }}
           </span>
           <span>Total: {{ subTotal }}</span>
         </div>
@@ -39,18 +39,24 @@ import { getCart } from "@/graphql/queries/getCart"
 
 import { filteredVariantPrice } from "@/utils/functions"
 
-//const testCart = await getCart()
+let testCart
+
+let cartLength //= 1
 
 setInterval(async () => {
-  console.log("Calling getCart:")
-  const testCart = await getCart()
- 
+  testCart = await getCart()
+
+  console.log("testCart.contents.nodes[0]", testCart.contents.nodes[0])
+
+  if (testCart.contents.nodes[0]) {
+    console.log("Nodes!")
+    cartLength = testCart.contents.nodes[0].quantity
+  }
+  //console.log("testCart length is:", testCart.contents.nodes[0].quantity)
 }, 6000)
 
 // Default values for testing
 const remoteError = false
-
-const cartLength = 1
 
 const subTotal = 199
 </script>
