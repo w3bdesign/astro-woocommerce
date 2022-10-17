@@ -41,11 +41,11 @@ import { filteredVariantPrice } from "@/utils/functions"
 
 //const testCart = await getCart()
 
-setInterval(async () => {
+/*setInterval(async () => {
   console.log("Calling getCart:")
   const testCart = await getCart()
  
-}, 6000)
+}, 6000)*/
 
 // Default values for testing
 const remoteError = false
