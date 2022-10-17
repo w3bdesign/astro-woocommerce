@@ -1,7 +1,7 @@
-import { fetchAPI } from "../../lib/api"
+import { fetchAxios } from "../../lib/axios"
 
 export async function getSingleProduct(id) {
-  const data = await fetchAPI(
+  const data = await fetchAxios(
     `
   query Product($id: ID!) {
     product(id: $id, idType: DATABASE_ID) {
