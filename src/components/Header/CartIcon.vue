@@ -40,23 +40,21 @@ import { ref } from "vue"
 
 import { getCart } from "@/graphql/queries/getCart"
 
-import { filteredVariantPrice } from "@/utils/functions"
-
-let testCart
+let cartContent
 
 let subTotal = ref("kr 0")
 
 let cartLength = ref(0)
 
 setInterval(async () => {
-  testCart = await getCart()
+  cartContent = await getCart()
 
-  if (testCart.contents.nodes[0]) {
-    cartLength.value = testCart.contents.nodes[0].quantity
-    subTotal.value = testCart.contents.nodes[0].total
+  if (cartContent.contents.nodes[0]) {
+    cartLength.value = cartContent.contents.nodes[0].quantity
+    subTotal.value = cartContent.contents.nodes[0].total
     subTotal.value = subTotal.value.replace("kr", "kr ")
   }
-}, 6000)
+}, 5000)
 
 // Default values for testing
 const remoteError = false
