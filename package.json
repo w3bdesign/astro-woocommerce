@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "2.1.1",
     "@astrojs/vercel": "2.3.0",
-    "@astrojs/vue": "^1.1.0",
+    "@astrojs/vue": "^1.2.0",
     "astro": "1.4.7",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.6.0",
