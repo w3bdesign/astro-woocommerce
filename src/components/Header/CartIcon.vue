@@ -20,6 +20,7 @@
           /></span>
         </a>
       </transition>
+
       <transition name="cart">
         <div v-if="cartLength">
           <span
@@ -35,22 +36,26 @@
 </template>
 
 <script setup>
+import { ref } from "vue"
+
 import { getCart } from "@/graphql/queries/getCart"
 
-import { filteredVariantPrice } from "@/utils/functions"
+let cartContent
 
-//const testCart = await getCart()
+let subTotal = ref("kr 0")
+
+let cartLength = ref(0)
 
 setInterval(async () => {
-  console.log("Calling getCart:")
-  const testCart = await getCart()
- 
-}, 6000)
+  cartContent = await getCart()
+
+  if (cartContent.contents.nodes[0]) {
+    cartLength.value = cartContent.contents.nodes[0].quantity
+    subTotal.value = cartContent.contents.nodes[0].total
+    subTotal.value = subTotal.value.replace("kr", "kr ")
+  }
+}, 5000)
 
 // Default values for testing
 const remoteError = false
-
-const cartLength = 1
-
-const subTotal = 199
 </script>

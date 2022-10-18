@@ -8,8 +8,6 @@ export async function fetchAxios(query, { variables } = {}) {
   woocommerceSession = undefined
 
   if (localStorage["woocommerce-session"]) {
-    console.log("Exists!")
-    console.log(localStorage["woocommerce-session"])
     woocommerceSession = localStorage["woocommerce-session"]
   }
 
@@ -35,8 +33,6 @@ export async function fetchAxios(query, { variables } = {}) {
     }
   })
     .then(response => {
-      console.log("Response headers: ", response.headers["woocommerce-session"])
-
       if (!localStorage["woocommerce-session"]) {
         localStorage["woocommerce-session"] =
           response.headers["woocommerce-session"]

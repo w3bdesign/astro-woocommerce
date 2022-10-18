@@ -55,11 +55,9 @@ const addProduct = product => {
     productId
   }
 
-  
-
   try {
-    addToCart(productQueryInput).then(() => console.log("Vi kom hit"))
-    console.log("Vi kom hit også")
+    addToCart(productQueryInput)
+
     //addProductToCart(hardcodedItemInfo)
   } catch (e) {
     console.log("Error: ", e)

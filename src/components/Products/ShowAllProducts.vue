@@ -22,7 +22,6 @@
                 {{ product.name }}
               </p>
             </div>
-
             <div v-if="product.onSale" class="flex justify-center mt-2">
               <div class="text-lg text-gray-900 line-through">
                 <span v-if="product.variations">
@@ -30,7 +29,6 @@
                 >
                 <span v-else>{{ product.regularPrice }}</span>
               </div>
-
               <div class="ml-4 text-xl text-gray-900">
                 <span v-if="product.variations">{{
                   filteredVariantPrice(product.price)
