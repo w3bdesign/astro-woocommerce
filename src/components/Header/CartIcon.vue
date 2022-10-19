@@ -46,7 +46,9 @@ let subTotal = ref("kr 0")
 
 let cartLength = ref(0)
 
-setInterval(async () => {
+// setInterval
+
+setTimeout(async () => {
   cartContent = await getCart()
 
   if (cartContent.contents.nodes[0]) {
@@ -54,7 +56,7 @@ setInterval(async () => {
     subTotal.value = cartContent.contents.nodes[0].total
     subTotal.value = subTotal.value.replace("kr", "kr ")
   }
-}, 5000)
+}, 2000)
 
 // Default values for testing
 const remoteError = false
