@@ -1,14 +1,9 @@
-<template>
-  This is Formkit form:
-
-</template>
+<template>This is Formkit form:</template>
 
 <script setup>
-// https://stackoverflow.com/questions/73498637/how-to-add-vuetify-to-astro
+// https://github.com/bholmesdev/astro-zod-form-demo/blob/main/src/components/Form.tsx
 
 import { reactive } from "vue"
-
-import {FormKit} from "@formkit/vue"
 
 const formData = reactive({
   firstName: "",
