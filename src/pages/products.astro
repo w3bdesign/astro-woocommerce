@@ -2,11 +2,16 @@
 import Layout from "../layouts/Layout.astro"
 
 import AllProducts from "@/components/Products/AllProducts.vue"
+
+import { getAllProducts } from "@/graphql/queries/getAllProductsAxios"
+
+const allProducts = await getAllProducts()
 ---
 
 <Layout title="Welcome to Products">
   <main>
     <h1 class="text-3xl text-center font-bold p-6">Products page</h1>
     <AllProducts client:load />
+    All products: {JSON.stringify(allProducts)}
   </main>
 </Layout>
