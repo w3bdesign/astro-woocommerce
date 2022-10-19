@@ -49,11 +49,7 @@
 </template>
 
 <script setup>
-//import { getAllProducts } from "@/graphql/queries/getAllProductsAxios"
-
 import { filteredVariantPrice } from "@/utils/functions"
-
-//const allProducts = await getAllProducts()
 
 const props = defineProps(["allProducts"])
 
