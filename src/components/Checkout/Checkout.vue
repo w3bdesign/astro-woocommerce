@@ -1,20 +1,14 @@
 <template>
-    Formkit form: 
-  <form-kit type="form" @submit="submitHandler" :actions="false">
-    <form-kit
-      type="text"
-      name="firstName"
-      label="First name"
-      v-model="formData.firstName"
-      validation="required|alpha|length:3"
-      validation-visibility="live"
-      placeholder="First name"
-    />
-  </form-kit>
+  This is Formkit form:
+
 </template>
 
 <script setup>
+// https://stackoverflow.com/questions/73498637/how-to-add-vuetify-to-astro
+
 import { reactive } from "vue"
+
+import {FormKit} from "@formkit/vue"
 
 const formData = reactive({
   firstName: "",
