@@ -41,10 +41,10 @@ import { ref } from "vue"
 import { getCart } from "@/graphql/queries/getCart"
 
 let cartContent
+
 let subTotal = ref("kr 0")
+
 let cartLength = ref(0)
-
-
 
 setInterval(async () => {
   cartContent = await getCart()
