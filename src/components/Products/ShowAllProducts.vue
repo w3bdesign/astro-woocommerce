@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="flex flex-wrap items-center">
-      <template v-for="singleProduct in allProducts">
+      <template v-for="singleProduct in props.allProducts">
         <template v-for="product in singleProduct">
           <div
             v-if="product.slug"
@@ -49,11 +49,9 @@
 </template>
 
 <script setup>
-import { getAllProducts } from "@/graphql/queries/getAllProductsAxios"
-
 import { filteredVariantPrice } from "@/utils/functions"
 
-const allProducts = await getAllProducts()
+const props = defineProps(["allProducts"])
 
 const productImage = product =>
   product.image ? product.image.sourceUrl : process.env.placeholderSmallImage

@@ -1,12 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import ShowAllProducts from "@/components/Products/ShowAllProducts.vue"
 
-import AllProducts from "@/components/Products/AllProducts.vue"
+import { getAllProducts } from "@/graphql/queries/getAllProductsAxios"
+
+const allProducts = await getAllProducts()
 ---
 
 <Layout title="Welcome to Products">
   <main>
     <h1 class="text-3xl text-center font-bold p-6">Products page</h1>
-    <AllProducts client:load />
+    <ShowAllProducts allProducts={allProducts} />
   </main>
 </Layout>
