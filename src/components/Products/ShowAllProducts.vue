@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="flex flex-wrap items-center">
-      <template v-for="singleProduct in props.allProducts">
+      <template v-for="singleProduct in allProducts">
         <template v-for="product in singleProduct">
           <div
             v-if="product.slug"
@@ -51,7 +51,7 @@
 <script setup>
 import { filteredVariantPrice } from "@/utils/functions"
 
-const props = defineProps(["allProducts"])
+defineProps(["allProducts"])
 
 const productImage = product =>
   product.image ? product.image.sourceUrl : process.env.placeholderSmallImage
