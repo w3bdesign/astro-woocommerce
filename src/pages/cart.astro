@@ -1,10 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro"
+
+import { getCart } from "@/graphql/queries/getCart"
+
+const cart = await getCart()
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <h1>Cart page</h1>
     <ul role="list" class="link-card-grid">Cart page</ul>
+    Cart content: {JSON.stringify(cart)}
   </main>
 </Layout>
