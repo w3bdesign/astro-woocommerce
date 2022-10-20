@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container p-4 mx-auto mt-2 flex-container">
-      <form @submit="handleSubmit()">
+      <form @submit.prevent="handleSubmit()">
         <div class="w-64 mx-auto lg:w-1/2">
           <div class="flex flex-wrap mt-2">
             <div class="p-2 lg:w-1/2">
@@ -11,9 +11,11 @@
                   :label="field.label"
                   :placeholder="field.placeholder"
                   :required="field.required"
-                  :vmodel="field.inputId"
+                  v-model="field.inputId"
                 />
               </div>
+              Form data:
+              <pre>{{ formData }}</pre>
 
               <label htmlFor="address">Address</label>
               <input
@@ -53,7 +55,7 @@ import BaseInputField from "@/components/UI/BaseInputField.vue"
 
 import { BILLING_FIELDS } from "@/utils/constants/BILLING_FIELDS.js"
 
-const handleSubmit = () => {
+const handleSubmit = e => {
   alert("Submit")
 }
 
