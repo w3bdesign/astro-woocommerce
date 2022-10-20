@@ -47,7 +47,7 @@
                 id="isPromoAllowed"
               />
 
-              <Button type="submit">Submit</Button>
+              <BaseButton type="submit">Submit</BaseButton>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
 
 import { reactive } from "vue"
 
-import Button from "@/components/UI/Button.vue"
+import BaseButton from "~/components/UI/BaseButton.vue"
 
 const handleSubmit = () => {
   alert("Submit")
