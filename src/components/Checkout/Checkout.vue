@@ -1,6 +1,4 @@
 <template>
-  This is a form:
-
   <section>
     <div class="container p-4 mx-auto mt-2 flex-container">
       <form @submit="handleSubmit()">
@@ -15,11 +13,32 @@
                 label="First name"
                 v-model="formData.firstName"
                 placeholder="First name"
+                class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
+                required
+              />
+              <label htmlFor="lastName">Last name</label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                label="Last name"
+                v-model="formData.lastName"
+                placeholder="Last name"
+                class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
                 required
               />
 
-              <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <label htmlFor="address">Address</label>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                label="Address"
+                v-model="formData.address"
+                placeholder="Address"
+                class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
+                required
+              />
 
               <label htmlFor="isPromoAllowed">Include promotional emails</label>
               <input
