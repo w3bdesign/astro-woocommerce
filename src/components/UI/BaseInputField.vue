@@ -1,5 +1,5 @@
 <template>
-  <label :htmlFor="props.inputId"><slot /></label>
+  <label :htmlFor="props.inputId">{{props.label}}</label>
   <input
     type="text"
     :name="props.inputId"

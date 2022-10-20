@@ -5,6 +5,17 @@
         <div class="w-64 mx-auto lg:w-1/2">
           <div class="flex flex-wrap mt-2">
             <div class="p-2 lg:w-1/2">
+              <div v-for="field in BILLING_FIELDS">
+                <BaseInputField
+                  :inputId="field.inputId"
+                  :label="field.label"
+                  :placeholder="field.placeholder"
+                  :required="field.required"
+                >
+                  test
+                </BaseInputField>
+              </div>
+
               <label htmlFor="firstName">First name</label>
               <input
                 type="text"
@@ -16,6 +27,7 @@
                 class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
                 required
               />
+
               <label htmlFor="lastName">Last name</label>
               <input
                 type="text"
@@ -62,6 +74,9 @@
 import { reactive } from "vue"
 
 import BaseButton from "@/components/UI/BaseButton.vue"
+import BaseInputField from "@/components/UI/BaseInputField.vue"
+
+import { BILLING_FIELDS } from "@/utils/constants/BILLING_FIELDS.js"
 
 const handleSubmit = () => {
   alert("Submit")
