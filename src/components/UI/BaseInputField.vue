@@ -1,5 +1,5 @@
 <template>
-  <label :htmlFor="props.inputId">{{props.label}}</label>
+  <label :htmlFor="props.inputId">{{ props.label }}</label>
   <input
     type="text"
     :name="props.inputId"
@@ -12,7 +12,13 @@
 </template>
 
 <script setup>
-// v-model="formData.firstName"
-const props = defineProps(["inputId", "label", "placeholder", "required", "vmodel"])
+// https://www.digitalocean.com/community/tutorials/how-to-add-v-model-support-to-custom-vue-js-components
+const props = defineProps([
+  "inputId",
+  "label",
+  "placeholder",
+  "required",
+  "vmodel"
+])
 defineEmits(["vmodel"])
 </script>

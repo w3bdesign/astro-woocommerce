@@ -11,7 +11,7 @@
                   :label="field.label"
                   :placeholder="field.placeholder"
                   :required="field.required"
-                  v-model="field.inputId"
+                  v-model="formData.inputId"
                 />
               </div>
               Form data:
@@ -55,7 +55,7 @@ import BaseInputField from "@/components/UI/BaseInputField.vue"
 
 import { BILLING_FIELDS } from "@/utils/constants/BILLING_FIELDS.js"
 
-const handleSubmit = e => {
+const handleSubmit = () => {
   alert("Submit")
 }
 
