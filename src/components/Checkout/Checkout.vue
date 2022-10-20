@@ -47,7 +47,7 @@
                 id="isPromoAllowed"
               />
 
-              <button type="submit">Sign me up</button>
+              <Button type="submit">Submit</Button>
             </div>
           </div>
         </div>
@@ -60,6 +60,8 @@
 // https://github.com/bholmesdev/astro-zod-form-demo/blob/main/src/components/Form.tsx
 
 import { reactive } from "vue"
+
+import Button from "@/components/UI/Button.vue"
 
 const handleSubmit = () => {
   alert("Submit")
