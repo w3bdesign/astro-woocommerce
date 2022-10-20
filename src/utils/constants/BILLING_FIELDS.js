@@ -4,5 +4,12 @@ export const BILLING_FIELDS = [
     label: "First name",
     placeholder: "First name",
     required: true
-  }
+  },
+  {
+    inputId: "lastName",
+    label: "Last name",
+    placeholder: "Last name",
+    required: true
+  },
+
 ]

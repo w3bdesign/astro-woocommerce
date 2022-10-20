@@ -20,7 +20,6 @@
           /></span>
         </a>
       </transition>
-
       <transition name="cart">
         <div v-if="cartLength">
           <span
@@ -51,7 +50,7 @@ let cartLength = ref(0)
 setTimeout(async () => {
   cartContent = await getCart()
 
-  if (cartContent.contents.nodes[0]) {
+  if (cartContent && cartContent.contents.nodes[0]) {
     cartLength.value = cartContent.contents.nodes[0].quantity
     subTotal.value = cartContent.contents.nodes[0].total
     subTotal.value = subTotal.value.replace("kr", "kr ")
