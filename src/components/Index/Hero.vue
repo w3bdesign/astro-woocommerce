@@ -14,5 +14,6 @@
 </template>
 
 <script setup>
+// https://github.com/ismail9k/vue3-carousel
 const heroImage = "/images/Hero.jpg"
 </script>
