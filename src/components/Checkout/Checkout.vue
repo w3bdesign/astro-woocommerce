@@ -61,7 +61,7 @@
 
 import { reactive } from "vue"
 
-import BaseButton from "~/components/UI/BaseButton.vue"
+import BaseButton from "@/components/UI/BaseButton.vue"
 
 const handleSubmit = () => {
   alert("Submit")
