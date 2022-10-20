@@ -1,0 +1,13 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import Checkout from "@/components/Checkout/Checkout.vue"
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <h1>Checkout page</h1>
+    <ul role="list" class="link-card-grid">Checkout page</ul>
+    <Checkout client:load />
+  </main>
+</Layout>

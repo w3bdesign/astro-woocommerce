@@ -1,14 +1,17 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import ShowSingleProduct from "@/components/Products/ShowSingleProduct.vue"
 
-import SingleProduct from "@/components/Products/SingleProduct.vue"
+import { getSingleProduct } from "@/graphql/queries/getSingleProduct"
 
-const { id, slug } = Astro.params
+const { id } = Astro.params
+
+const product = await getSingleProduct(id)
 ---
 
 <Layout title="Welcome to Single Products">
   <main>
     <h1 class="text-3xl text-center font-bold p-6">Single Product page</h1>
-    <SingleProduct id={id} slug={slug} client:load />
+    <ShowSingleProduct product={product} />
   </main>
 </Layout>

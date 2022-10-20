@@ -12,13 +12,13 @@ export default defineConfig({
     tailwind(),
     sitemap({
       customPages: [
-        "https://astro-woocommerce.vercel.app",
-        "https://astro-woocommerce.vercel.app/products"
+        "https://astro.dfweb.no",
+        "https://astro.dfweb.no/products"
       ]
     }),
     image()
   ],
   output: "server",
   adapter: vercel(),
-  site: "https://astro-woocommerce.vercel.app"
+  site: "https://astro.dfweb.no"
 })
