@@ -69,7 +69,7 @@
                 :product="variationProduct"
                 client:visible
               />
-              <AddToCartButton v-else :product="product" client:visible/>
+              <AddToCartButton v-else :product="product" client:visible />
             </div>
           </div>
         </div>
@@ -79,15 +79,11 @@
 </template>
 
 <script setup>
-import { getSingleProduct } from "@/graphql/queries/getSingleProduct"
-
 import { filteredVariantPrice, stripHTML } from "@/utils/functions"
 
 import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
-const props = defineProps(["id", "slug"])
-
-const product = await getSingleProduct(props.id)
+defineProps(["product"])
 
 const variationProduct = 18 // Hardcoded variation ID
 </script>
