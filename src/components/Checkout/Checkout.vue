@@ -14,9 +14,8 @@
                   v-model="comment"
                 />
               </div>
-              Form data:
-              <pre>{{ formData && JSON.stringify(formData[0]) }}</pre>
-              
+              Comment data:
+              <pre>{{ comment && JSON.stringify(comment) }}</pre>
 
               <BaseButton type="submit">Submit</BaseButton>
             </div>
@@ -43,12 +42,11 @@ const handleSubmit = () => {
   alert("Submit")
 }
 
-//const formData = reactive({})
+let formData = reactive({})
 
-const formData = ref("test")
+//const formData = ref("test")
 
-
-let comment = ref('initial textarea value');
+let comment = ref("initial textarea value")
 
 /*const formData = reactive({
   firstName: "",
