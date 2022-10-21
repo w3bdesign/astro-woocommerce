@@ -8,6 +8,8 @@
     :placeholder="props.placeholder"
     class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
     :required="props.required"
+    @input="emit('update:modelValue', $event.target.value)"
+    v-text="modelValue"
   />
 </template>
 
@@ -19,7 +21,8 @@ const props = defineProps([
   "label",
   "placeholder",
   "required",
-  "vmodel"
+  "modelValue"
 ])
-defineEmits(["vmodel"])
+
+const emit = defineEmits(["update:modelValue"])
 </script>
