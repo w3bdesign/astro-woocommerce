@@ -8,8 +8,7 @@
               <div v-for="field in BILLING_FIELDS">
                 <BaseInputField
                   :inputId="field.inputId"
-                  :label="field.label"
-                  :placeholder="field.placeholder"
+                  :label="field.label"                  
                   :required="field.required"
                   v-model="formData[field.inputId]"
                 />
@@ -27,7 +26,6 @@
 
 <script setup>
 // https://github.com/bholmesdev/astro-zod-form-demo/blob/main/src/components/Form.tsx
-
 // https://laracasts.com/series/learn-vue-3-step-by-step
 
 import { ref } from "vue"
