@@ -45,7 +45,6 @@ const hardcodedItemInfo = {
 
 const addProduct = product => {
   //state.loading = true
-
   //setTimeout(() => (state.loading = false), 1000)
 
   const productId = product.databaseId ? product.databaseId : product
