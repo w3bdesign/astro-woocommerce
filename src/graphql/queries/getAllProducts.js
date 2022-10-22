@@ -1,4 +1,4 @@
-import { fetchAPI } from '../../lib/api'
+import { fetchAPI } from "../../lib/api"
 
 export async function getAllProducts() {
   const data = await fetchAPI(`

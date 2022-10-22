@@ -11,10 +11,7 @@ export default defineConfig({
     vue(),
     tailwind(),
     sitemap({
-      customPages: [
-        "https://astro.dfweb.no",
-        "https://astro.dfweb.no/products"
-      ]
+      customPages: ["https://astro.dfweb.no", "https://astro.dfweb.no/products"]
     }),
     image()
   ],

@@ -10,6 +10,5 @@ export const BILLING_FIELDS = [
     label: "Last name",
     placeholder: "Last name",
     required: true
-  },
-
+  }
 ]

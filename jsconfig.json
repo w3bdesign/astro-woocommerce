@@ -1,13 +1,12 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "~/*": ["./src/*"],
-        "@/*": ["./src/*"],
-        "~~/*": ["./src/*"],
-        "@@/*": ["./src/*"]
-      }
-    },
-    "exclude": ["node_modules", ".vercel", "dist"]
-  }
-  
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"],
+      "~~/*": ["./src/*"],
+      "@@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", ".vercel", "dist"]
+}
