@@ -8,32 +8,32 @@
 
 ## Table Of Contents (TOC)
 
--   [Installation](#Installation)
--   [Features](#Features)
--   [Troubleshooting](#Troubleshooting)
--   [TODO](#TODO)
+- [Installation](#Installation)
+- [Features](#Features)
+- [Troubleshooting](#Troubleshooting)
+- [TODO](#TODO)
 
 ## Installation
 
 1.  Install and activate the following required plugins, in your WordPress plugin directory:
 
--   [woocommerce](https://wordpress.org/plugins/woocommerce) Ecommerce for WordPress.
--   [wp-graphql](https://wordpress.org/plugins/wp-graphql) Exposes GraphQL for WordPress.
--   [wp-graphql-woocommerce](https://github.com/wp-graphql/wp-graphql-woocommerce) Adds WooCommerce functionality to a WPGraphQL schema. Currently only confirmed to be working with version 0.61 of this plugin.
--   [algolia-woo-indexer](https://github.com/w3bdesign/algolia-woo-indexer) Sends WooCommerce products to Algolia. Required for search to work.
--   [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) May be needed if you experience CORS errors. Check "Send site credentials" and add domain to Extend "Access-Control-Allow-Origin” header
+- [woocommerce](https://wordpress.org/plugins/woocommerce) Ecommerce for WordPress.
+- [wp-graphql](https://wordpress.org/plugins/wp-graphql) Exposes GraphQL for WordPress.
+- [wp-graphql-woocommerce](https://github.com/wp-graphql/wp-graphql-woocommerce) Adds WooCommerce functionality to a WPGraphQL schema. Currently only confirmed to be working with version 0.61 of this plugin.
+- [algolia-woo-indexer](https://github.com/w3bdesign/algolia-woo-indexer) Sends WooCommerce products to Algolia. Required for search to work.
+- [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) May be needed if you experience CORS errors. Check "Send site credentials" and add domain to Extend "Access-Control-Allow-Origin” header
 
 Optional plugin:
 
--   [headless-wordpress](https://github.com/w3bdesign/headless-wp) Disables the frontend so only the backend is accessible.
--   [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) Ensures that CORS works correctly. Remember to add the domain to the store under `Extend "Access-Control-Allow-Origin” header`
+- [headless-wordpress](https://github.com/w3bdesign/headless-wp) Disables the frontend so only the backend is accessible.
+- [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) Ensures that CORS works correctly. Remember to add the domain to the store under `Extend "Access-Control-Allow-Origin” header`
 
 The current release has been tested and is confirmed working with the following plugin versions:
 
--   WordPress version 6.0.1
--   WooCommerce version 6.4.1
--   WP GraphQL version 1.5.0
--   WooGraphQL version 0.6.2
+- WordPress version 6.0.1
+- WooCommerce version 6.4.1
+- WP GraphQL version 1.5.0
+- WooGraphQL version 0.6.2
 
 2.  For debugging and testing, install either:
 
@@ -63,17 +63,17 @@ The current release has been tested and is confirmed working with the following 
 
 ## Features
 
--   Astro
--   Vue 3
--   Tailwind CSS
--   Vue Apollo with GraphQL Codegen
--   Responsive design
--   Support for simple and variable products
--   GraphQL-based filters
--   CSS animations and transitions
--   Form handling and validation with Vue Formulate
--   Checkout process
--   Animated mobile menu
+- Astro
+- Vue 3
+- Tailwind CSS
+- Vue Apollo with GraphQL Codegen
+- Responsive design
+- Support for simple and variable products
+- GraphQL-based filters
+- CSS animations and transitions
+- Form handling and validation with Vue Formulate
+- Checkout process
+- Animated mobile menu
 
 ## Troubleshooting
 
@@ -87,4 +87,4 @@ Check the attributes of the products. Right now the application requires Size an
 
 ## TODO
 
--   Make WooCommerce session token expire and get deleted after 24 hours
+- Make WooCommerce session token expire and get deleted after 24 hours

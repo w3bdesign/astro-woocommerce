@@ -14,7 +14,7 @@
                   v-model="formData[field.inputId]"
                 />
               </div>
-              Comment data:
+              formData data:
               <pre>{{ formData && JSON.stringify(formData) }}</pre>
               <BaseButton type="submit">Submit</BaseButton>
             </div>
