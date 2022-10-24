@@ -12,10 +12,13 @@
                   :required="field.required"
                   v-model="formData[field.inputId]"
                 />
-                <span class="text-2xl text-red-500 font-bold">{{
-                  validate[field.inputId].$errors[0] &&
-                  validate[field.inputId].$errors[0].$message
-                }}</span>
+                <span class="text-xl text-red-500 font-bold"
+                  >
+                  {{
+                    validate[field.inputId].$errors[0] &&
+                    validate[field.inputId].$errors[0].$message
+                  }}</span
+                >
               </div>
               formData data:
               <pre>{{ formData && JSON.stringify(formData) }}</pre>
@@ -32,18 +35,14 @@
 // https://github.com/bholmesdev/astro-zod-form-demo/blob/main/src/components/Form.tsx
 // https://laracasts.com/series/learn-vue-3-step-by-step
 
-import { ref, reactive } from "vue"
+import { ref } from "vue"
 import { useVuelidate } from "@vuelidate/core"
-import { required } from "@vuelidate/validators"
+import { required, email } from "@vuelidate/validators"
 
 import BaseButton from "@/components/UI/BaseButton.vue"
 import BaseInputField from "@/components/UI/BaseInputField.vue"
 
 import { BILLING_FIELDS } from "@/utils/constants/BILLING_FIELDS.js"
-
-const state = reactive({
-  firstName: ""
-})
 
 const rules = {
   firstName: { required },
@@ -51,7 +50,7 @@ const rules = {
   address1: { required },
   postcode: { required },
   city: { required },
-  email: { required },
+  email: { email, required },
   phone: { required }
 }
 
