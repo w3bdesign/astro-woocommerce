@@ -1,16 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import Cart from "@/components/Cart/Cart.vue"
-
-//import { getCart } from "@/graphql/queries/getCart"
-
-//const cart = await getCart()
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Cart page</h1>
-    <ul role="list" class="link-card-grid">Cart page</ul>
-    Cart: <Cart client:load />
+    <h1 class="text-center text-2xl">Cart page</h1>
+    <Cart client:load />
   </main>
 </Layout>
