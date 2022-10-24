@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import Cart from "@/components/Cart/Cart.vue"
 
 import { getCart } from "@/graphql/queries/getCart"
 
@@ -10,6 +11,6 @@ const cart = await getCart()
   <main>
     <h1>Cart page</h1>
     <ul role="list" class="link-card-grid">Cart page</ul>
-    Cart content: {JSON.stringify(cart)}
+    Cart: {cart && <Cart cart={cart} client:load />}
   </main>
 </Layout>

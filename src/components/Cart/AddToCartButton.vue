@@ -29,7 +29,7 @@
 <script setup>
 import { reactive } from "vue"
 
-//import { addProductToCart } from "@/stores/cartStore.js"
+import { addProductToCart } from "@/stores/cartStore.js"
 
 import { addToCart } from "@/graphql/mutations/addToCart.js"
 

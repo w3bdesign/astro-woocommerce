@@ -55,7 +55,7 @@ setTimeout(async () => {
     subTotal.value = cartContent.contents.nodes[0].total
     subTotal.value = subTotal.value.replace("kr", "kr ")
   }
-}, 2000)
+}, 5000)
 
 // Default values for testing
 const remoteError = false
