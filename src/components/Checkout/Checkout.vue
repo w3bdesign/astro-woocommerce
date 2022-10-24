@@ -5,6 +5,16 @@
         <div class="w-64 mx-auto lg:w-1/2">
           <div class="flex flex-wrap mt-2">
             <div class="p-2 lg:w-1/2">
+              Error:
+
+              <div
+                class="input-errors"
+                v-for="error of validate.firstName.$errors"
+                :key="error.$uid"
+              >
+                <div class="error-msg">{{ error.$message }}</div>
+              </div>
+
               <div v-for="field in BILLING_FIELDS">
                 <BaseInputField
                   :inputId="field.inputId"
@@ -47,21 +57,17 @@ const rules = {
 
 let formData = ref({})
 
+const validate = useVuelidate(rules, state)
+
+validate.value.$validate()
+
+
+
 const handleSubmit = async () => {
+  //const validate = useVuelidate(rules, state, { $lazy: true })
 
-
-  const validate = useVuelidate(rules, state, { $lazy: true })
-
-  
-
-
-
-   validate.value.$validate()
+  validate.value.$validate()
 
   console.log(validate.value.firstName.$error)
-
-
-
-  //console.log(v$.firstName)
 }
 </script>
