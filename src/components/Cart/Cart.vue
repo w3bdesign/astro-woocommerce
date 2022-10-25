@@ -5,23 +5,20 @@
       :key="products.id"
       class="container mx-auto mt-4 flex-container"
     >
-      <div v-if="displayRemove" class="item">
+      <div class="item">
         <span class="block mt-2 font-extrabold">Remove: <br /></span>
         <span class="item-content"> Remove </span>
       </div>
-
       <div class="item">
         <span class="block mt-2 font-extrabold">Name: <br /></span>
         <span class="item-content">{{ products.product.name }}</span>
       </div>
-
       <div class="item">
         <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
         <span class="item-content">
           {{ products.quantity }}
         </span>
       </div>
-
       <div class="item">
         <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
         <span class="item-content"> {{ products.total }} </span>
@@ -31,6 +28,11 @@
   <div v-else>
     <LoadingSpinner />
   </div>
+  <h2 v-if="!cartContent" class="m-4 text-3xl text-center">
+    Cart is currently empty
+  </h2>
+  <CartCheckoutButton v-else />
+
 </template>
 
 <script setup>
@@ -39,6 +41,7 @@ import { ref, onBeforeMount } from "vue"
 import { getCart } from "@/graphql/queries/getCart"
 
 import LoadingSpinner from "@/components/Spinner/LoadingSpinner.vue"
+import CartCheckoutButton from "@/components/Cart/CartCheckoutButton.vue"
 
 let cartContent = ref()
 let subTotal = ref()
