@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, onBeforeMount } from "vue"
 
 import { getCart } from "@/graphql/queries/getCart"
 
@@ -45,9 +45,7 @@ let subTotal = ref("kr 0")
 
 let cartLength = ref(0)
 
-// setInterval
-
-setTimeout(async () => {
+onBeforeMount(async () => {
   cartContent = await getCart()
 
   if (cartContent && cartContent.contents.nodes[0]) {
@@ -55,7 +53,7 @@ setTimeout(async () => {
     subTotal.value = cartContent.contents.nodes[0].total
     subTotal.value = subTotal.value.replace("kr", "kr ")
   }
-}, 5000)
+})
 
 // Default values for testing
 const remoteError = false
