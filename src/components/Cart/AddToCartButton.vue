@@ -29,7 +29,7 @@
 <script setup>
 import { reactive } from "vue"
 
-//import { addProductToCart } from "@/stores/cartStore.js"
+import { addProductToCart } from "@/stores/cartStore.js"
 
 import { addToCart } from "@/graphql/mutations/addToCart.js"
 
@@ -45,7 +45,6 @@ const hardcodedItemInfo = {
 
 const addProduct = product => {
   //state.loading = true
-
   //setTimeout(() => (state.loading = false), 1000)
 
   const productId = product.databaseId ? product.databaseId : product
