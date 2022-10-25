@@ -9,19 +9,16 @@
         <span class="block mt-2 font-extrabold">Remove: <br /></span>
         <span class="item-content"> Remove </span>
       </div>
-
       <div class="item">
         <span class="block mt-2 font-extrabold">Name: <br /></span>
         <span class="item-content">{{ products.product.name }}</span>
       </div>
-
       <div class="item">
         <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
         <span class="item-content">
           {{ products.quantity }}
         </span>
       </div>
-
       <div class="item">
         <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
         <span class="item-content"> {{ products.total }} </span>
