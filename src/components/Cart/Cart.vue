@@ -1,9 +1,9 @@
 <template>
-  <div v-if="cartContent">
+  <div v-if="cartContent" class="">
     <div
       v-for="products in cartContent"
       :key="products.id"
-      class="container mx-auto mt-4 flex-container"
+      class="mx-auto mt-4 flex-container"
     >
       <div class="item">
         <span class="block mt-2 font-extrabold">Remove: <br /></span>
@@ -24,15 +24,12 @@
         <span class="item-content"> {{ products.total }} </span>
       </div>
     </div>
+    <div class="container mx-auto flex justify-end mt-2 max-w-[1380px]"><CartCheckoutButton /></div>
   </div>
   <div v-else>
+    <h2 class="m-4 text-3xl text-center">Cart is currently empty</h2>
     <LoadingSpinner />
   </div>
-  <h2 v-if="!cartContent" class="m-4 text-3xl text-center">
-    Cart is currently empty
-  </h2>
-  <CartCheckoutButton v-else />
-
 </template>
 
 <script setup>
@@ -66,9 +63,8 @@ onBeforeMount(async () => {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  align-content: center;
-  max-width: 1380px;
-  @apply border border-gray-300 rounded-lg shadow;
+  align-content: center; 
+  @apply border border-gray-300 rounded-lg shadow max-w-[1380px];
 }
 
 .item {
