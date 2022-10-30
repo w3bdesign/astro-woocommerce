@@ -24,7 +24,7 @@
         <span class="item-content"> {{ products.total }} </span>
       </div>
     </div>
-    <div class="container mx-auto flex justify-end mt-2 max-w-[1380px]"><CartCheckoutButton /></div>
+    <div v-if="showCheckoutButton" class="container mx-auto flex justify-end mt-2 max-w-[1380px]"><CartCheckoutButton /></div>
   </div>
   <div v-else>
     <h2 class="m-4 text-3xl text-center">Cart is currently empty</h2>
@@ -43,6 +43,8 @@ import CartCheckoutButton from "@/components/Cart/CartCheckoutButton.vue"
 let cartContent = ref()
 let subTotal = ref()
 let cartLength = ref(0)
+
+defineProps(["showCheckoutButton"])
 
 onBeforeMount(async () => {
   const cart = await getCart()

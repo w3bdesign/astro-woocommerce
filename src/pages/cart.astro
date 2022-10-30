@@ -6,6 +6,6 @@ import Cart from "@/components/Cart/Cart.vue"
 <Layout title="Welcome to Astro.">
   <main>
     <h1 class="text-center text-3xl font-bold p-4">Cart</h1>
-    <Cart client:load />
+    <Cart showCheckoutButton={true} client:load />
   </main>
 </Layout>
