@@ -1,4 +1,5 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_astro-woocommerce&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_astro-woocommerce)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2134b6e594884f489ad4dad6502c5a2a)](https://www.codacy.com/gh/w3bdesign/astro-woocommerce/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=w3bdesign/astro-woocommerce&amp;utm_campaign=Badge_Grade)
 
 # This is currently a work in progress
 
