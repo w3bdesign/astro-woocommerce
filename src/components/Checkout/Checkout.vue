@@ -33,7 +33,7 @@
 // https://github.com/bholmesdev/astro-zod-form-demo/blob/main/src/components/Form.tsx
 // https://laracasts.com/series/learn-vue-3-step-by-step
 
-import { ref, onMounted } from "vue"
+import { ref } from "vue"
 import { useVuelidate } from "@vuelidate/core"
 import { required, email } from "@vuelidate/validators"
 
@@ -61,8 +61,11 @@ const validate = useVuelidate(rules, formData)
 //validate.value.$validate()
 
 const handleSubmit = async () => {
-  
-  //validate.value.$validate()
+  const isFormCorrect = await validate.value.$validate()
+
+  if (!isFormCorrect) {
+    return
+  }
 
   const paymentMethod = "cod"
 
@@ -79,10 +82,6 @@ const handleSubmit = async () => {
     phone: formData.value.phone,
     company: formData.value.company
   }
-
- 
-
-
 
   const checkoutData = {
     //clientMutationId: uid(),
