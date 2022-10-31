@@ -14,7 +14,7 @@
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "2.1.1",
-    "@astrojs/vercel": "2.3.2",
+    "@astrojs/vercel": "2.3.3",
     "@astrojs/vue": "^1.2.1",
     "astro": "1.6.2",
     "prettier": "^2.7.1",
