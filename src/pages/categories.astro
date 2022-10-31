@@ -1,9 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+
+import ShowAllCategories from "@/components/Category/ShowAllCategories.vue"
+
+import { getAllCategories } from "@/graphql/queries/getAllCategories"
+
+const allCategories = await getAllCategories()
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <h1 class="text-center text-3xl font-bold p-4">Categories</h1>
+    <ShowAllCategories categories={allCategories} />
   </main>
 </Layout>
