@@ -9,19 +9,15 @@
                 <BaseInputField
                   :inputId="field.inputId"
                   :label="field.label"
-                  :required="field.required"
                   v-model="formData[field.inputId]"
                 />
-                <span class="text-xl text-red-500 font-bold"
-                  >
+                <span class="text-xl text-red-500 font-bold">
                   {{
                     validate[field.inputId].$errors[0] &&
                     validate[field.inputId].$errors[0].$message
-                  }}</span
-                >
+                  }}
+                </span>
               </div>
-              formData data:
-              <pre>{{ formData && JSON.stringify(formData) }}</pre>
               <BaseButton type="submit">Submit</BaseButton>
             </div>
           </div>
@@ -44,6 +40,8 @@ import BaseInputField from "@/components/UI/BaseInputField.vue"
 
 import { BILLING_FIELDS } from "@/utils/constants/BILLING_FIELDS.js"
 
+import { checkoutOrder } from "@/graphql/mutations/checkoutOrder"
+
 const rules = {
   firstName: { required },
   lastName: { required },
@@ -56,15 +54,42 @@ const rules = {
 
 let formData = ref({})
 
-//const validate = useVuelidate(rules, state)
-
 const validate = useVuelidate(rules, formData)
 
-validate.value.$validate()
-
 const handleSubmit = async () => {
-  //const validate = useVuelidate(rules, state, { $lazy: true })
+  const isFormCorrect = await validate.value.$validate()
 
-  validate.value.$validate()
+  if (!isFormCorrect) {
+    return
+  }
+
+  const paymentMethod = "cod"
+
+  const billing = {
+    firstName: formData.value.firstName,
+    lastName: formData.value.lastName,
+    address1: formData.value.address1,
+    address2: formData.value.address2,
+    city: formData.value.city,
+    country: formData.value.country,
+    state: formData.value.state,
+    postcode: formData.value.postcode,
+    email: formData.value.email,
+    phone: formData.value.phone,
+    company: formData.value.company
+  }
+
+  const checkoutData = {
+    //clientMutationId: uid(),
+    clientMutationId: "12345678abcdef",
+    billing: billing,
+    shipping: billing,
+    shipToDifferentAddress: false,
+    paymentMethod: paymentMethod,
+    isPaid: false,
+    transactionId: "hjkhjkhsdsdiui"
+  }
+
+  checkoutOrder(checkoutData)
 }
 </script>
