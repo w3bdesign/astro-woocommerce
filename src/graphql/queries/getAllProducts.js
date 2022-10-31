@@ -1,7 +1,7 @@
-import { fetchAPI } from "../../lib/api"
+import { fetchAxios } from "../../lib/axios"
 
 export async function getAllProducts() {
-  const data = await fetchAPI(`
+  const data = await fetchAxios(`
   {
     products(first: 24) {
       nodes {
