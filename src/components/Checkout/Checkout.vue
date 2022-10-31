@@ -15,11 +15,9 @@
                   {{
                     validate[field.inputId].$errors[0] &&
                     validate[field.inputId].$errors[0].$message
-                  }}</span
-                >
+                  }}
+                </span>
               </div>
-              formData data:
-              <pre>{{ formData && JSON.stringify(formData) }}</pre>
               <BaseButton type="submit">Submit</BaseButton>
             </div>
           </div>
@@ -57,8 +55,6 @@ const rules = {
 let formData = ref({})
 
 const validate = useVuelidate(rules, formData)
-
-//validate.value.$validate()
 
 const handleSubmit = async () => {
   const isFormCorrect = await validate.value.$validate()
