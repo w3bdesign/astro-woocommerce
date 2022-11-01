@@ -5,12 +5,12 @@ import ShowAllCategories from "@/components/Category/ShowAllCategories.vue"
 
 import { getAllCategories } from "@/graphql/queries/getAllCategories"
 
-const allCategories = await getAllCategories()
+const categories = await getAllCategories()
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <h1 class="text-center text-3xl font-bold p-4">Categories</h1>
-    <ShowAllCategories categories={allCategories} />
+    <ShowAllCategories categories={categories} client:load />
   </main>
 </Layout>

@@ -11,11 +11,8 @@ export async function getAllCategories() {
         slug
       }
     }
-  }
-  
+  }  
     `)
 
-  console.log("Categories data:", data)
-
-  return data?.products
+  return data?.productCategories
 }
