@@ -15,7 +15,7 @@ export async function getAllCategories() {
   
     `)
 
-    console.log("Categories data:", data)
+  console.log("Categories data:", data)
 
   return data?.products
 }
