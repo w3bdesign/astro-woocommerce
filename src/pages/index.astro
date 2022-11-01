@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro"
 import Hero from "@/components/Index/Hero.vue"
 import ShowAllProducts from "@/components/Products/ShowAllProducts.vue"
 
-import { getAllProducts } from "@/graphql/queries/getAllProductsAxios"
+import { getAllProducts } from "@/graphql/queries/getAllProducts"
 
 const allProducts = await getAllProducts()
 ---
