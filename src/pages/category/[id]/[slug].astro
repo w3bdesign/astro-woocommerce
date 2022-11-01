@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import ShowProductsInCategory from "@/components/Category/ShowProductsInCategory.vue"
+
+import { getProductsFromCategory } from "@/graphql/queries/getProductsFromCategory"
+
+const { slug } = Astro.params
+
+const products = await getProductsFromCategory(slug)
+---
+
+<Layout title="Welcome to Category Products">
+  <main>
+    <h1 class="text-3xl text-center font-bold p-6">Category Products page</h1>
+    <ShowProductsInCategory products={products} client:load />
+  </main>
+</Layout>

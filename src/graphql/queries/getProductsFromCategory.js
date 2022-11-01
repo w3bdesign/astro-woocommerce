@@ -4,7 +4,7 @@ export async function getProductsFromCategory(id) {
   const data = await fetchAxios(
     `
     query ProductsFromCategory($id: ID!) {
-        productCategory(id: $id) {
+        productCategory(id: $id, idType: DATABASE_ID) {
           id
           name
           products(first: 50) {
@@ -56,11 +56,11 @@ export async function getProductsFromCategory(id) {
             }
           }
         }
-      }
+    }     
       
     `,
     { variables: { id } }
   )
 
-  return data?.products
+  return data?.productCategory
 }
