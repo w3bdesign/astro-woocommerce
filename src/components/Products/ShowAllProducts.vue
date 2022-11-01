@@ -1,10 +1,19 @@
 <template>
   <section>
     <div class="flex flex-wrap items-center">
-      Category product: {{ categoryProduct}}
+      Category product: {{ categoryProduct }}
+  
       <template v-for="singleProduct in allProducts">
+
+        {{ 
+        // https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html
+      }}
         <template v-if="!categoryProduct">
+         
+         
           <template v-for="product in singleProduct">
+
+
             <div
               v-if="product.slug"
               :key="product.databaseId"
