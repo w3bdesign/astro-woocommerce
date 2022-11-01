@@ -9,10 +9,7 @@
             <div v-if="category.slug" :key="category.id">
               <a
                 class="text-black cursor-pointer hover:underline"
-                :href="{
-                  path: '/category/' + category.slug,
-                  query: { id: category.id }
-                }"
+                
               >
                 <div class="p-6 cursor-pointer">
                   <div
