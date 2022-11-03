@@ -24,7 +24,12 @@
         <span class="item-content"> {{ products.total }} </span>
       </div>
     </div>
-    <div v-if="showCheckoutButton" class="container mx-auto flex justify-end mt-2 max-w-[1380px]"><CartCheckoutButton /></div>
+    <div
+      v-if="showCheckoutButton"
+      class="container mx-auto flex justify-end mt-2 max-w-[1380px]"
+    >
+      <CartCheckoutButton />
+    </div>
   </div>
   <div v-else>
     <h2 class="m-4 text-3xl text-center">Cart is currently empty</h2>
@@ -65,7 +70,7 @@ onBeforeMount(async () => {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  align-content: center; 
+  align-content: center;
   @apply border border-gray-300 rounded-lg shadow max-w-[1380px];
 }
 
