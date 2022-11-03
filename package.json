@@ -1,6 +1,6 @@
 {
   "name": "astro-woocommerce",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -22,7 +22,7 @@
     "vue": "^3.2.41"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.0",
+    "@astrojs/image": "^0.11.1",
     "@headlessui/vue": "^1.7.4",
     "@nanostores/vue": "^0.6.1",
     "@vuelidate/core": "^2.0.0",
