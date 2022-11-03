@@ -32,7 +32,7 @@
 // https://laracasts.com/series/learn-vue-3-step-by-step
 
 import { ref } from "vue"
-import { useVuelidate } from "@vuelidate/core"
+import  useVuelidate  from "@vuelidate/core"
 import { required, email } from "@vuelidate/validators"
 
 import BaseButton from "@/components/UI/BaseButton.vue"
