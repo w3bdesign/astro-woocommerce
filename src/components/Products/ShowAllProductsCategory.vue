@@ -7,7 +7,7 @@
           :key="product.databaseId"
           class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:1/4 xl:w-1/4"
         >
-          <a :href="`/products/${product.slug}/${product.databaseId}`">
+          <a :href="'/products/' + product.slug + '/' + product.databaseId">
             <img
               id="product-image"
               class="container mx-auto transition duration-500 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:scale-110"
