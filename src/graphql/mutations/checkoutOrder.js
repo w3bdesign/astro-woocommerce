@@ -13,7 +13,5 @@ export async function checkoutOrder(order) {
     { variables: { input: order } }
   )
 
-  console.log("Data from checkout: ", data)
-
   return data?.addToCart
 }

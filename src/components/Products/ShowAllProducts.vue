@@ -50,7 +50,7 @@
 <script setup>
 import { filteredVariantPrice } from "@/utils/functions"
 
-defineProps(["allProducts"])
+defineProps(["allProducts", "categoryProduct"])
 
 const productImage = product =>
   product.image ? product.image.sourceUrl : process.env.placeholderSmallImage
