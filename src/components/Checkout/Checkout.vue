@@ -32,7 +32,7 @@
 // https://laracasts.com/series/learn-vue-3-step-by-step
 
 import { ref } from "vue"
-import  useVuelidate  from "@vuelidate/core"
+
 import { required, email } from "@vuelidate/validators"
 
 import BaseButton from "@/components/UI/BaseButton.vue"
@@ -41,6 +41,8 @@ import BaseInputField from "@/components/UI/BaseInputField.vue"
 import { BILLING_FIELDS } from "@/utils/constants/BILLING_FIELDS.js"
 
 import { checkoutOrder } from "@/graphql/mutations/checkoutOrder"
+
+const useVuelidate = require("@vuelidate/core")
 
 const rules = {
   firstName: { required },
