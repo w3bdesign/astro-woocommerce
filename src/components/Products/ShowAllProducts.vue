@@ -1,8 +1,6 @@
 <template>
   <section>
     <div class="flex flex-wrap items-center">
-      Category product: {{ categoryProduct }}
-
       <template v-for="singleProduct in allProducts">
         <template v-for="product in singleProduct">
           <div
