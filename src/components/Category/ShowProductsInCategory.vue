@@ -5,7 +5,7 @@
         {{ products.name }}
       </h1>
       <br />
-      <ShowAllProducts categoryProduct="true" :allProducts="products.products.nodes" />
+      <ShowAllProductsCategory :allProducts="products.products.nodes" />
       <div v-if="!products.products.nodes.length" class="mt-10">
         <h2 class="h-10 text-2xl font-bold text-center">
           No products to display
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import ShowAllProducts from "@/components/Products/ShowAllProducts.vue"
+import ShowAllProductsCategory from "@/components/Products/ShowAllProductsCategory.vue"
 
 defineProps(["products"])
 </script>
