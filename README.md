@@ -67,12 +67,12 @@ The current release has been tested and is confirmed working with the following 
 - Astro
 - Vue 3
 - Tailwind CSS
-- Vue Apollo with GraphQL Codegen
+- Custom fetch function with Axios
 - Responsive design
 - Support for simple and variable products
 - GraphQL-based filters
 - CSS animations and transitions
-- Form handling and validation with Vue Formulate
+- Form handling and validation with Vuelidate
 - Checkout process
 - Animated mobile menu
 
