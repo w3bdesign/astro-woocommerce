@@ -38,7 +38,7 @@ import { required, email } from "@vuelidate/validators"
 import BaseButton from "@/components/UI/BaseButton.vue"
 import BaseInputField from "@/components/UI/BaseInputField.vue"
 
-import { BILLING_FIELDS } from "@/utils/constants/BILLING_FIELDS.js"
+import { BILLING_FIELDS } from "./constants/BILLING_FIELDS"
 
 import { checkoutOrder } from "@/graphql/mutations/checkoutOrder"
 

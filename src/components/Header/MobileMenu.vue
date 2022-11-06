@@ -17,9 +17,9 @@
         leave-to-class="transform scale-95 opacity-0"
       >
         <MenuItems
-          class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          class="absolute z-50 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
-          <div class="px-1 py-1">
+          <div class="px-1 py-1 z-50">
             <ul>
               <MenuItem v-slot="{ active }">
                 <li :class="[active ? 'linkStyleActive' : 'linkStyle']">
@@ -60,11 +60,6 @@
 
 <script setup>
 import CartIcon from "./CartIcon.vue"
-
-// Setup mobile menu
-
-// Use Headless UI with this? https://headlessui.com/vue/menu
-// https://www.youtube.com/watch?v=qJnIJa-cF2M
 
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue"
 </script>
