@@ -35,8 +35,8 @@ import { ref } from "vue"
 
 import { required, email } from "@vuelidate/validators"
 
-import BaseButton from "@/components/UI/BaseButton"
-import BaseInputField from "@/components/UI/BaseInputField"
+import BaseButton from "@/components/UI/BaseButton.vue"
+import BaseInputField from "@/components/UI/BaseInputField.vue"
 
 import { BILLING_FIELDS } from "./constants/BILLING_FIELDS"
 
