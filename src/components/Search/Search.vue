@@ -3,7 +3,7 @@
     <ais-search-box />
     <ais-stats />
     <ais-refinement-list attribute="pa_color" />
-    <ais-hits>
+    <ais-hits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
       <template v-slot:item="{ item }">
         <a
           :href="`/products/${convertProductNameToSlug(item.product_name)}/${
@@ -43,7 +43,7 @@ import {
 
 import algoliasearch from "algoliasearch/lite"
 
-import "instantsearch.css/themes/satellite.css"
+import "instantsearch.css/themes/algolia-min.css"
 
 const searchClient = algoliasearch(
   import.meta.env.PUBLIC_ALGOLIA_APPLICATION_ID,
