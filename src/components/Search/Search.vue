@@ -14,16 +14,15 @@
           <p class="p-2 text-2xl font-bold text-center">
             {{ item.product_name }}
           </p>
+          <p
+            class="p-2 transition duration-700 ease-in-out transform cursor-pointer hover:scale-95"
+          >
+            <img :src="item.product_image" alt="item.product_name" />
+          </p>
+          <p class="p-2 text-xl font-bold text-center">
+            {{ item.sale_price ? item.sale_price : item.regular_price }} kr
+          </p>
         </a>
-        <p class="p-2 text-xl text-center">
-          {{ item.short_description }}
-        </p>
-        <p class="p-2">
-          <img :src="item.product_image" alt="item.product_name" />
-        </p>
-        <p class="p-2 text-xl text-center">
-          {{ item.sale_price ? item.sale_price : item.regular_price }} kr
-        </p>
       </template>
     </AisHits>
     <AisPagination />

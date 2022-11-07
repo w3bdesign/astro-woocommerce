@@ -10,7 +10,7 @@
           <a :href="'/products/' + product.slug + '/' + product.databaseId">
             <img
               id="product-image"
-              class="container mx-auto transition duration-500 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:scale-110"
+              class="container mx-auto transition duration-700 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:scale-95"
               :alt="product.name"
               :src="productImage(product)"
             />
