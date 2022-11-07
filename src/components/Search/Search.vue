@@ -1,9 +1,9 @@
 <template>
-  <ais-instant-search :search-client="searchClient" index-name="dfweb">
-    <ais-search-box />
-    <ais-stats />
-    <ais-refinement-list attribute="pa_color" />
-    <ais-hits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
+  <AisInstantSearch :search-client="searchClient" index-name="dfweb">
+    <AisSearchBox />
+    <AisStats />
+    <AisRefinementList attribute="pa_color" />
+    <AisHits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
       <template v-slot:item="{ item }">
         <a
           :href="`/products/${convertProductNameToSlug(item.product_name)}/${
@@ -25,9 +25,9 @@
           {{ item.sale_price ? item.sale_price : item.regular_price }} kr
         </p>
       </template>
-    </ais-hits>
-    <ais-pagination />
-  </ais-instant-search>
+    </AisHits>
+    <AisPagination />
+  </AisInstantSearch>
 </template>
 
 <script setup>
@@ -35,7 +35,6 @@ import {
   AisInstantSearch,
   AisRefinementList,
   AisHits,
-  AisHighlight,
   AisSearchBox,
   AisStats,
   AisPagination
@@ -54,7 +53,7 @@ const convertProductNameToSlug = productName =>
   productName.replace(/ /g, "-").toLowerCase()
 </script>
 
-<style scoped>
+<style>
 @media (max-width: 767px) {
   .CustomHitsItem {
     padding: 10px;
@@ -64,7 +63,7 @@ const convertProductNameToSlug = productName =>
 
 @media (min-width: 768px) {
   .CustomHitsItem {
-    width: 30%;
+    width: 32.2%;
   }
 }
 </style>
