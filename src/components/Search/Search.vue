@@ -37,9 +37,7 @@ import {
   AisSearchBox,
   AisStats,
   AisPagination
-} 
-//from "vue-instantsearch/vue3/es"
-from "vue-instantsearch"
+} from "vue-instantsearch/vue3/es"
 
 import algoliasearch from "algoliasearch/lite"
 
