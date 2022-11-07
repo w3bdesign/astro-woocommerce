@@ -15,7 +15,8 @@ export default defineConfig({
     }),
     image()
   ],
-  output: "server",
-  adapter: vercel(),
+  output: "static",
+  //output: "server",
+  //adapter: vercel(),
   site: "https://astro.dfweb.no"
 })
