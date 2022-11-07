@@ -33,7 +33,7 @@
 
 import { ref } from "vue"
 
-import { useVuelidate } from "@vuelidate/core"
+//import { useVuelidate } from "@vuelidate/core"
 import { required, email } from "@vuelidate/validators"
 
 import BaseButton from "@/components/UI/BaseButton.vue"
@@ -43,7 +43,7 @@ import { BILLING_FIELDS } from "./constants/BILLING_FIELDS"
 
 import { checkoutOrder } from "@/graphql/mutations/checkoutOrder"
 
-//const useVuelidate = require("@vuelidate/core")
+const useVuelidate = require("@vuelidate/core")
 
 const rules = {
   firstName: { required },
