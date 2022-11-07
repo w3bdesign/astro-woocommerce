@@ -31,7 +31,6 @@
                   <a href="/products"> Products </a>
                 </li>
               </MenuItem>
-
               <MenuItem v-slot="{ active }">
                 <li :class="[active ? 'linkStyleActive' : 'linkStyle']">
                   <a href="/categories"> Categories </a>
@@ -42,7 +41,6 @@
                   <a href="/search"> Search </a>
                 </li>
               </MenuItem>
-
               <MenuItem v-slot="{ active }">
                 <li class="flex justify-center mt-6 text-lg linkStyleCart">
                   <a href="/cart">
