@@ -70,6 +70,7 @@ The current release has been tested and is confirmed working with the following 
 -   Custom fetch function with Axios
 -   Responsive design
 -   Support for simple and variable products
+-   Vue Instantsearch with Algolia
 -   GraphQL-based filters
 -   CSS animations and transitions
 -   Form handling and validation with Vuelidate
@@ -87,8 +88,6 @@ Check that you are using the 0.6.2 version of the [wp-graphql-woocommerce](https
 Check the attributes of the products. Right now the application requires Size and Color.
 
 ## TODO
-
--   Implement search
 
 -   Fix all known issues
 
