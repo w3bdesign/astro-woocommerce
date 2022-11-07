@@ -14,9 +14,8 @@ export default defineConfig({
       customPages: ["https://astro.dfweb.no", "https://astro.dfweb.no/products"]
     }),
     image()
-  ],
-  output: "static",
-  //output: "server",
-  //adapter: vercel(),
+  ], 
+  output: "server",
+  adapter: vercel(),
   site: "https://astro.dfweb.no"
 })
