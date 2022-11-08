@@ -1,71 +1,63 @@
 <template>
   <section>
     <div class="container p-4 mx-auto mt-2 flex-container">
-      <form @submit.prevent="handleSubmit(event)">
+      <Form @submit="handleSubmit">
         <div class="w-64 mx-auto lg:w-1/2">
           <div class="flex flex-wrap mt-2">
             <div class="p-2 lg:w-1/2">
-              <div v-for="field in BILLING_FIELDS">
-                <BaseInputField
-                  :inputId="field.inputId"
-                  :label="field.label"
-                  v-model="formData[field.inputId]"
+              <div v-for="field in BILLING_FIELDS" :key="field.inputId">
+                <label :for="field.inputId">{{ field.label }}</label>
+                <Field
+                  class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
+                  :name="field.inputId"
+                  :rules="requiredValue"
                 />
-                <span class="text-xl text-red-500 font-bold">
-                 
-                    validate[field.inputId].$errors[0] &&
-                    validate[field.inputId].$errors[0].$message
-                  
-                </span>
+                <ErrorMessage
+                  class="text-lg text-red-500 font-bold"
+                  :name="field.inputId"
+                />
               </div>
               <BaseButton type="submit">Submit</BaseButton>
             </div>
           </div>
         </div>
-      </form>
+      </Form>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { Form, Field, ErrorMessage } from "vee-validate"
 
 import BaseButton from "@/components/UI/BaseButton.vue"
-import BaseInputField from "@/components/UI/BaseInputField.vue"
 
 import { BILLING_FIELDS } from "./constants/BILLING_FIELDS"
 
 import { checkoutOrder } from "@/graphql/mutations/checkoutOrder"
 
-/*const rules = {
-  firstName: { required },
-  lastName: { required },
-  address1: { required },
-  postcode: { required },
-  city: { required },
-  email: { email, required },
-  phone: { required }
-}*/
+const requiredValue = value => {
+  // if the field is empty
+  if (!value) {
+    return "This field is required"
+  }
+  return true
+}
 
-let formData = ref({})
-
-const handleSubmit = async () => {
-  // const isFormCorrect = await validate.value.$validate()
-
+const handleSubmit = values => {
   const paymentMethod = "cod"
 
   const billing = {
-    firstName: formData.value.firstName,
-    lastName: formData.value.lastName,
-    address1: formData.value.address1,
-    address2: formData.value.address2,
-    city: formData.value.city,
-    country: formData.value.country,
-    state: formData.value.state,
-    postcode: formData.value.postcode,
-    email: formData.value.email,
-    phone: formData.value.phone,
-    company: formData.value.company
+    firstName: values.firstName,
+    lastName: values.lastName,
+    address1: values.address1,
+    address2: values.address2,
+    city: values.city,
+    country: values.country,
+    state: values.state,
+    postcode: values.postcode,
+    email: values.email,
+    phone: values.phone,
+    company: values.company
   }
 
   const checkoutData = {
@@ -79,6 +71,6 @@ const handleSubmit = async () => {
     transactionId: "hjkhjkhsdsdiui"
   }
 
-  checkoutOrder(checkoutData)
+  //checkoutOrder(checkoutData)
 }
 </script>
