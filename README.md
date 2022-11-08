@@ -73,7 +73,7 @@ The current release has been tested and is confirmed working with the following 
 -   Vue Instantsearch with Algolia
 -   GraphQL-based filters
 -   CSS animations and transitions
--   Form handling and validation with Vuelidate
+-   Form handling and validation with Vee Validate and Yup
 -   Checkout process
 -   Animated mobile menu
 
