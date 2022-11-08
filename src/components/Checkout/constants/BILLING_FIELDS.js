@@ -1,11 +1,11 @@
-import { required } from "@vuelidate/validators"
+//import { required } from "@vuelidate/validators"
 
 export const BILLING_FIELDS = [
   {
     inputId: "firstName",
     label: "First name",
     //required: true,
-    rules: { required }
+    //rules: { required }
   },
   {
     inputId: "lastName",
