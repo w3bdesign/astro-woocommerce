@@ -1,40 +1,42 @@
-import { required } from "@vuelidate/validators"
+import * as Yup from "yup"
 
 export const BILLING_FIELDS = [
   {
     inputId: "firstName",
-    label: "First name",
-    //required: true,
-    rules: { required }
+    label: "First name"
   },
   {
     inputId: "lastName",
-    label: "Last name",
-    required: true
+    label: "Last name"
   },
   {
     inputId: "address1",
-    label: "Address",
-    required: true
+    label: "Address"
   },
   {
     inputId: "postcode",
-    label: "Postcode",
-    required: true
+    label: "Postcode"
   },
   {
     inputId: "city",
-    label: "City",
-    required: true
+    label: "City"
   },
   {
     inputId: "email",
-    label: "Email",
-    required: true
+    label: "Email"
   },
   {
     inputId: "phone",
-    label: "Phone",
-    required: true
+    label: "Phone"
   }
 ]
+
+export const BILLING_SCHEMA = Yup.object().shape({
+  firstName: Yup.string().required(),
+  lastName: Yup.string().required(),
+  address1: Yup.string().required(),
+  postcode: Yup.number().moreThan(1111),
+  city: Yup.string().required(),
+  email: Yup.string().email(),
+  phone: Yup.number().required().moreThan(11111111)
+})
