@@ -7,7 +7,11 @@
     >
       <div class="item">
         <span class="block mt-2 font-extrabold">Remove: <br /></span>
-        <span class="item-content"> <BaseXSVG /> </span>
+        <span class="item-content">
+          <button @click="handleProductRemove(products.id)">
+            <BaseXSVG />
+          </button>
+        </span>
       </div>
       <div class="item">
         <span class="block mt-2 font-extrabold">Name: <br /></span>
@@ -51,6 +55,8 @@ let subTotal = ref()
 let cartLength = ref(0)
 
 defineProps(["showCheckoutButton"])
+
+const handleProductRemove = () => alert("Remove!")
 
 onBeforeMount(async () => {
   const cart = await getCart()
