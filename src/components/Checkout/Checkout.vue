@@ -1,27 +1,27 @@
 <template>
-  <section>
-    <div class="container p-4 mx-auto mt-2 flex-container">
-      <Form :validation-schema="BILLING_SCHEMA" @submit="handleSubmit">
-        <div class="w-64 mx-auto lg:w-1/2">
-          <div class="flex flex-wrap mt-2">
-            <div class="p-2 lg:w-1/2">
-              <div v-for="field in BILLING_FIELDS" :key="field.inputId">
-                <label :for="field.inputId">{{ field.label }}</label>
-                <Field
-                  class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
-                  :name="field.inputId"
-                />
-                <ErrorMessage
-                  class="text-lg text-red-500 font-bold"
-                  :name="field.inputId"
-                />
-              </div>
-              <BaseButton type="submit">Submit</BaseButton>
-            </div>
-          </div>
+  <section class="text-gray-700 container p-4 py-2 mx-auto">
+    <Form :validation-schema="BILLING_SCHEMA" @submit="handleSubmit">
+      <div class="mx-auto lg:w-1/2 flex flex-wrap">
+        <div
+          v-for="field in BILLING_FIELDS"
+          :key="field.inputId"
+          class="w-1/2 p-2"
+        >
+          <label :for="field.inputId">{{ field.label }}</label>
+          <Field
+            class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
+            :name="field.inputId"
+          />
+          <ErrorMessage
+            class="text-lg text-red-500 font-bold"
+            :name="field.inputId"
+          />
         </div>
-      </Form>
-    </div>
+        <div class="w-full flex justify-center mt-6">
+          <BaseButton type="submit">Submit</BaseButton>
+        </div>
+      </div>
+    </Form>
   </section>
 </template>
 
