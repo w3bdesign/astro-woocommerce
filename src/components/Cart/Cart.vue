@@ -45,6 +45,7 @@
 import { ref, onBeforeMount } from "vue"
 
 import { getCart } from "@/graphql/queries/getCart"
+import { updateCart } from "@/graphql/mutations/updateCart"
 
 import LoadingSpinner from "@/components/Spinner/LoadingSpinner.vue"
 import CartCheckoutButton from "@/components/Cart/CartCheckoutButton.vue"
@@ -56,7 +57,33 @@ let cartLength = ref(0)
 
 defineProps(["showCheckoutButton"])
 
-const handleProductRemove = () => alert("Remove!")
+const handleProductRemove = (product) => alert("Remove!")
+
+
+/*
+
+const handleRemoveProductClick = (event, cartKey, products) => {
+    event.stopPropagation();
+    if (products.length) {
+      // By passing the newQty to 0 in updateCart Mutation, it will remove the item.
+      const newQty = 0;
+      const updatedItems = getUpdatedItems(products, newQty, cartKey);
+
+      updateCart({
+        variables: {
+          input: {
+            clientMutationId: uuidv4(),
+            items: updatedItems,
+          },
+        },
+      });
+    }
+
+    refetch();
+  };
+
+
+*/
 
 onBeforeMount(async () => {
   const cart = await getCart()
