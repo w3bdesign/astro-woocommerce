@@ -17,8 +17,9 @@
             :name="field.inputId"
           />
         </div>
-
-        <BaseButton type="submit">Submit</BaseButton>
+        <div class="w-full flex justify-center mt-6">
+          <BaseButton type="submit">Submit</BaseButton>
+        </div>
       </div>
     </Form>
   </section>
