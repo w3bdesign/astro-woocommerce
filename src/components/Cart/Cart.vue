@@ -7,7 +7,7 @@
     >
       <div class="item">
         <span class="block mt-2 font-extrabold">Remove: <br /></span>
-        <span class="item-content"> Remove </span>
+        <span class="item-content"> <BaseXSVG /> </span>
       </div>
       <div class="item">
         <span class="block mt-2 font-extrabold">Name: <br /></span>
@@ -44,6 +44,7 @@ import { getCart } from "@/graphql/queries/getCart"
 
 import LoadingSpinner from "@/components/Spinner/LoadingSpinner.vue"
 import CartCheckoutButton from "@/components/Cart/CartCheckoutButton.vue"
+import BaseXSVG from "@/components/UI/BaseXSVG.vue"
 
 let cartContent = ref()
 let subTotal = ref()
