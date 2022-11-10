@@ -53,13 +53,11 @@ const addProduct = product => {
   }
 
   try {
-    addToCart(productQueryInput)
+    addToCart(productQueryInput).then(() => window.location.reload())
     addProductToCart(hardcodedItemInfo)
   } catch (e) {
     console.log("Error: ", e)
   }
-
-  //addProductToCart(hardcodedItemInfo)
 }
 </script>
 

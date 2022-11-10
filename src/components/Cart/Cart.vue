@@ -8,7 +8,7 @@
       <div class="item">
         <span class="block mt-2 font-extrabold">Remove: <br /></span>
         <span class="item-content">
-          <button @click="handleProductRemove(products.id)">
+          <button @click="handleProductRemove(products)">
             <BaseXSVG />
           </button>
         </span>
@@ -37,7 +37,6 @@
   </div>
   <div v-else>
     <h2 class="m-4 text-3xl text-center">Cart is currently empty</h2>
-    <LoadingSpinner />
   </div>
 </template>
 
@@ -57,33 +56,15 @@ let cartLength = ref(0)
 
 defineProps(["showCheckoutButton"])
 
-const handleProductRemove = (product) => alert("Remove!")
+const handleProductRemove = product => {
+  let updatedItems = []
+  updatedItems.push({
+    key: product.key,
+    quantity: 0
+  })
 
-
-/*
-
-const handleRemoveProductClick = (event, cartKey, products) => {
-    event.stopPropagation();
-    if (products.length) {
-      // By passing the newQty to 0 in updateCart Mutation, it will remove the item.
-      const newQty = 0;
-      const updatedItems = getUpdatedItems(products, newQty, cartKey);
-
-      updateCart({
-        variables: {
-          input: {
-            clientMutationId: uuidv4(),
-            items: updatedItems,
-          },
-        },
-      });
-    }
-
-    refetch();
-  };
-
-
-*/
+  updateCart(updatedItems).then(() => window.location.reload())
+}
 
 onBeforeMount(async () => {
   const cart = await getCart()
