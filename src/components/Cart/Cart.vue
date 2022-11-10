@@ -1,12 +1,12 @@
 <template>
-  <div v-if="cartContent" class="">
+  <div v-if="cartContent">
     <div
       v-for="products in cartContent"
       :key="products.id"
       class="mx-auto mt-4 flex-container"
     >
-      <div class="item">
-        <span class="block mt-2 font-extrabold">Remove: <br /></span>
+      <div v-if="showCheckoutButton" class="item">
+        <span  class="block mt-2 font-extrabold">Remove: <br /></span>
         <span class="item-content">
           <button @click="handleProductRemove(products)">
             <BaseXSVG />
