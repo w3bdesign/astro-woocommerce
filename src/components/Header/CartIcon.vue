@@ -6,30 +6,26 @@
       >
     </div>
     <div v-else>
-      <transition name="cart">
-        <a href="/cart">
-          <span
-            v-if="cartLength"
-            class="text-xl text-white no-underline lg:text-black is-active"
-          >
-            <img
-              alt="Cart icon"
-              class="h-12 ml-4 lg:ml-2"
-              aria-label="Cart"
-              src="../../../public/svg/Cart.svg"
-          /></span>
-        </a>
-      </transition>
-      <transition name="cart">
-        <div v-if="cartLength">
-          <span
-            class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
-          >
-            {{ cartLength }}
-          </span>
-          <span>Total: {{ subTotal }}</span>
-        </div>
-      </transition>
+      <a href="/cart">
+        <span
+          v-if="cartLength"
+          class="text-xl text-white no-underline lg:text-black is-active"
+        >
+          <img
+            alt="Cart icon"
+            class="h-12 ml-4 lg:ml-2"
+            aria-label="Cart"
+            src="../../../public/svg/Cart.svg"
+        /></span>
+      </a>
+      <div v-if="cartLength">
+        <span
+          class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
+        >
+          {{ cartLength }}
+        </span>
+        <span>Total: {{ subTotal }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -49,8 +45,11 @@ onBeforeMount(async () => {
   cartContent = await getCart()
 
   if (cartContent && cartContent.contents.nodes[0]) {
-    cartLength.value = cartContent.contents.nodes[0].quantity
-    subTotal.value = cartContent.contents.nodes[0].total
+    cartLength.value = cartContent.contents.nodes.reduce(
+      (accumulator, argument) => accumulator + argument.quantity,
+      0
+    )
+    subTotal.value = cartContent.total
     subTotal.value = subTotal.value.replace("kr", "kr ")
   }
 })

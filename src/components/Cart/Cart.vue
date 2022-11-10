@@ -7,7 +7,11 @@
     >
       <div class="item">
         <span class="block mt-2 font-extrabold">Remove: <br /></span>
-        <span class="item-content"> <BaseXSVG /> </span>
+        <span class="item-content">
+          <button @click="handleProductRemove(products)">
+            <BaseXSVG />
+          </button>
+        </span>
       </div>
       <div class="item">
         <span class="block mt-2 font-extrabold">Name: <br /></span>
@@ -33,7 +37,6 @@
   </div>
   <div v-else>
     <h2 class="m-4 text-3xl text-center">Cart is currently empty</h2>
-    <LoadingSpinner />
   </div>
 </template>
 
@@ -41,8 +44,8 @@
 import { ref, onBeforeMount } from "vue"
 
 import { getCart } from "@/graphql/queries/getCart"
+import { updateCart } from "@/graphql/mutations/updateCart"
 
-import LoadingSpinner from "@/components/Spinner/LoadingSpinner.vue"
 import CartCheckoutButton from "@/components/Cart/CartCheckoutButton.vue"
 import BaseXSVG from "@/components/UI/BaseXSVG.vue"
 
@@ -51,6 +54,16 @@ let subTotal = ref()
 let cartLength = ref(0)
 
 defineProps(["showCheckoutButton"])
+
+const handleProductRemove = product => {
+  let updatedItems = []
+  updatedItems.push({
+    key: product.key,
+    quantity: 0
+  })
+
+  updateCart(updatedItems).then(() => window.location.reload())
+}
 
 onBeforeMount(async () => {
   const cart = await getCart()
