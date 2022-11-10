@@ -61,7 +61,7 @@ const remoteError = false
 /* we will explain what these classes do next! */
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 0.4s ease;
 }
 
 .v-enter-from,
