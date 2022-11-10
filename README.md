@@ -89,8 +89,6 @@ Check the attributes of the products. Right now the application requires Size an
 
 ## TODO
 
--   Fix all known issues
-
--   Add ability to remove and update cart
+-   Add ability to update product quantity in cart
 
 -   Make WooCommerce session token expire and get deleted after 24 hours
