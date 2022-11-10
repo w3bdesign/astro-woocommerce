@@ -6,7 +6,7 @@
       class="mx-auto mt-4 flex-container"
     >
       <div v-if="showCheckoutButton" class="item">
-        <span  class="block mt-2 font-extrabold">Remove: <br /></span>
+        <span class="block mt-2 font-extrabold">Remove: <br /></span>
         <span class="item-content">
           <button @click="handleProductRemove(products)">
             <BaseXSVG />

@@ -85,10 +85,8 @@ export async function updateCart(product) {
       }    
 
     `,
-    { variables: { input: {items: product }} }
+    { variables: { input: { items: product } } }
   )
-
- 
 
   return data?.items
 }
