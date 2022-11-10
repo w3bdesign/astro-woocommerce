@@ -1,32 +1,31 @@
 <template>
-  <div>
+  <div class="w-[110px] h-[90px]">
     <div v-if="remoteError">
       <span class="text-xl text-red-500"
         >Error fetching cart. Please refresh the page.</span
       >
     </div>
-    <div v-else>
-      <a href="/cart">
-        <span
-          v-if="cartLength"
-          class="text-xl text-white no-underline lg:text-black is-active"
-        >
-          <img
-            alt="Cart icon"
-            class="h-12 ml-4 lg:ml-2"
-            aria-label="Cart"
-            src="../../../public/svg/Cart.svg"
-        /></span>
-      </a>
+    <Transition>
       <div v-if="cartLength">
-        <span
-          class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
-        >
-          {{ cartLength }}
-        </span>
-        <span>Total: {{ subTotal }}</span>
+        <a href="/cart">
+          <span class="text-xl text-white no-underline lg:text-black is-active">
+            <img
+              alt="Cart icon"
+              class="h-12 ml-4 lg:ml-2"
+              aria-label="Cart"
+              src="../../../public/svg/Cart.svg"
+          /></span>
+        </a>
+        <div>
+          <span
+            class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
+          >
+            {{ cartLength }}
+          </span>
+          <span>Total: {{ subTotal }}</span>
+        </div>
       </div>
-    </div>
+    </Transition>
   </div>
 </template>
 
@@ -57,3 +56,16 @@ onBeforeMount(async () => {
 // Default values for testing
 const remoteError = false
 </script>
+
+<style>
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
