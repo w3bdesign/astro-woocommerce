@@ -5,7 +5,6 @@
         >Error fetching cart. Please refresh the page.</span
       >
     </div>
-
     <Transition>
       <div v-if="cartLength">
         <a href="/cart">
