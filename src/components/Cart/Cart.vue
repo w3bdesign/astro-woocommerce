@@ -46,7 +46,6 @@ import { ref, onBeforeMount } from "vue"
 import { getCart } from "@/graphql/queries/getCart"
 import { updateCart } from "@/graphql/mutations/updateCart"
 
-import LoadingSpinner from "@/components/Spinner/LoadingSpinner.vue"
 import CartCheckoutButton from "@/components/Cart/CartCheckoutButton.vue"
 import BaseXSVG from "@/components/UI/BaseXSVG.vue"
 

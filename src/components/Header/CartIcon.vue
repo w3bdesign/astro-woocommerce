@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { Transition, ref, onBeforeMount } from "vue"
+import { ref, onBeforeMount } from "vue"
 
 import { getCart } from "@/graphql/queries/getCart"
 
