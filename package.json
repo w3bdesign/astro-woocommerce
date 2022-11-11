@@ -16,13 +16,13 @@
     "@astrojs/tailwind": "2.1.2",
     "@astrojs/vercel": "2.3.3",
     "@astrojs/vue": "^1.2.1",
-    "astro": "1.6.5",
+    "astro": "1.6.7",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.0",
     "vue": "^3.2.44"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.2",
+    "@astrojs/image": "^0.11.4",
     "@headlessui/vue": "^1.7.4",
     "@nanostores/vue": "^0.6.1",
     "algoliasearch": "^4.14.2",
