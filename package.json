@@ -19,7 +19,7 @@
     "astro": "1.6.7",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.0",
-    "vue": "^3.2.44"
+    "vue": "^3.2.45"
   },
   "dependencies": {
     "@astrojs/image": "^0.11.4",
