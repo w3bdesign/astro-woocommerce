@@ -3,9 +3,7 @@ import axios from "axios"
 export async function fetchAxios(query, { variables } = {}) {
   const { PUBLIC_GRAPHQL_URL } = import.meta.env
 
-  let woocommerceSession
-
-  woocommerceSession = undefined
+  let woocommerceSession = undefined
 
   if (localStorage["woocommerce-session"]) {
     woocommerceSession = localStorage["woocommerce-session"]
