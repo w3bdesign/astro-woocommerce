@@ -30,7 +30,6 @@
 import { reactive } from "vue"
 
 import { addProductToCart } from "@/stores/cartStore.js"
-
 import { addToCart } from "@/graphql/mutations/addToCart.js"
 
 const state = reactive({ loading: false })
@@ -44,8 +43,7 @@ const hardcodedItemInfo = {
 }
 
 const addProduct = product => {
-  //state.loading = true
-  //setTimeout(() => (state.loading = false), 1000)
+  state.loading = true
 
   const productId = product.databaseId ? product.databaseId : product
   const productQueryInput = {
@@ -53,12 +51,16 @@ const addProduct = product => {
   }
 
   try {
-    addToCart(productQueryInput).then(() => window.location.reload())
+    addToCart(productQueryInput).then(() => {
+      state.loading = false
+      window.location.reload()
+    })
     addProductToCart(hardcodedItemInfo)
   } catch (e) {
     if (import.meta.env.DEV) {
       console.log("Error: ", e)
     }
+    state.loading = false
   }
 }
 </script>
