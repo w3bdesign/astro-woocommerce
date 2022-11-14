@@ -31,7 +31,6 @@ export async function fetchAxios(query, { variables } = {}) {
         localStorage["woocommerce-session"] =
           response.headers["woocommerce-session"]
       }
-
       return response.data.data
     })
     .catch(error => {
