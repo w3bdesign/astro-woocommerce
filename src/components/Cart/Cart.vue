@@ -70,7 +70,6 @@ onBeforeMount(async () => {
 
   if (cart && cart.contents.nodes[0]) {
     cartContent.value = cart.contents.nodes
-
     cartLength.value = cart.contents.nodes[0].quantity
     subTotal.value = cart.contents.nodes[0].total
   }
