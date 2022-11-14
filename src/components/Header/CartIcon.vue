@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[110px] h-[90px]">
+  <div>
     <div v-if="remoteError">
       <span class="text-xl text-red-500"
         >Error fetching cart. Please refresh the page.</span
