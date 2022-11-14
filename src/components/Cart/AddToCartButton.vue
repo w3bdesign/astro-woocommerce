@@ -56,7 +56,9 @@ const addProduct = product => {
     addToCart(productQueryInput).then(() => window.location.reload())
     addProductToCart(hardcodedItemInfo)
   } catch (e) {
-    console.log("Error: ", e)
+    if (import.meta.env.DEV) {
+      console.log("Error: ", e)
+    }
   }
 }
 </script>

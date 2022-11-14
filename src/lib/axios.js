@@ -35,6 +35,8 @@ export async function fetchAxios(query, { variables } = {}) {
       return response.data.data
     })
     .catch(error => {
-      console.log("Error: ", error)
+      if (import.meta.env.DEV) {
+        console.log("Error: ", error)
+      }
     })
 }

@@ -4,8 +4,9 @@ export const post = async ({ request }) => {
   const result = await request.formData()
 
   if (result) {
-    // do stuff
-    console.log(result)
+    if (import.meta.env.DEV) {
+      console.log(result)
+    }
     return new Response(null, { status: 200 })
   } else {
     return new Response(
