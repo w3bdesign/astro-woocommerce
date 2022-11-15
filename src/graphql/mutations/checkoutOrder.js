@@ -7,11 +7,14 @@ export async function checkoutOrder(order) {
         checkout(input: $input) {
           result
           redirect
+          order {
+            databaseId
+          }
         }
       }
     `,
     { variables: { input: order } }
   )
 
-  return data?.addToCart
+  return data?.checkout.result
 }
