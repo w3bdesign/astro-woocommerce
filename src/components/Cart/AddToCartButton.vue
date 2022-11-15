@@ -51,14 +51,19 @@ const addProduct = product => {
   }
 
   try {
-    addToCart(productQueryInput).then(() => {
+    addToCart(productQueryInput).then(result => {
       state.loading = false
+
+      if (!result) {
+        localStorage.clear()
+      }
+
       window.location.reload()
     })
     addProductToCart(hardcodedItemInfo)
   } catch (e) {
     if (import.meta.env.DEV) {
-      console.log("Error: ", e)
+      console.log("Error in dev: ", e)
     }
     state.loading = false
   }
