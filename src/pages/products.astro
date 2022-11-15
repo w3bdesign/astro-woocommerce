@@ -7,7 +7,7 @@ import { getAllProducts } from "@/graphql/queries/getAllProducts"
 const allProducts = await getAllProducts()
 ---
 
-<Layout title="Welcome to Products">
+<Layout title="Products">
   <main>
     <h1 class="text-3xl text-center font-bold p-6">Products page</h1>
     <ShowAllProducts allProducts={allProducts} />

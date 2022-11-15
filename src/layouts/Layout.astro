@@ -2,6 +2,8 @@
 import Navbar from "./Navbar.astro"
 import Footer from "./Footer.astro"
 
+import { siteTitle } from "../config/siteConfig"
+
 const { title } = Astro.props
 ---
 
@@ -10,10 +12,13 @@ const { title } = Astro.props
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Self-sharpening mechanical pencil that autocorrects your penmanship. Includes 2B auto-replenishing lead. Available in both Vintage Pink and Schoolbus Yellow. Order 50+ pencils, get free shipping.">
+    <meta
+      name="description"
+      content="Self-sharpening mechanical pencil that autocorrects your penmanship. Includes 2B auto-replenishing lead. Available in both Vintage Pink and Schoolbus Yellow. Order 50+ pencils, get free shipping."
+    />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{siteTitle}{title}</title>
   </head>
   <body>
     <Navbar />

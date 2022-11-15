@@ -62,6 +62,19 @@ const handleSubmit = values => {
     transactionId: "hjkhjkhsdsdiui"
   }
 
-  checkoutOrder(checkoutData)
+  try {
+    checkoutOrder(checkoutData).then(result => {
+      console.log("Result from checkoutOrder: ", result)
+      if (result === "success") {
+        location.href = "/success"
+      } else {
+        location.href = "/error"
+      }
+    })
+  } catch (e) {
+    if (import.meta.env.DEV) {
+      console.log("Error: ", e)
+    }
+  }
 }
 </script>

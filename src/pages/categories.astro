@@ -8,7 +8,7 @@ import { getAllCategories } from "@/graphql/queries/getAllCategories"
 const categories = await getAllCategories()
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Categories">
   <main>
     <h1 class="text-center text-3xl font-bold p-4">Categories</h1>
     <ShowAllCategories categories={categories} client:load />
