@@ -12,10 +12,11 @@
             class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
             :name="field.inputId"
           />
-          <ErrorMessage
-            class="text-lg text-red-500 font-bold"
-            :name="field.inputId"
-          />
+          <ErrorMessage :name="field.inputId" v-slot="{ message }">
+            <span class="text-lg text-red-500 font-bold">{{
+              upperCaseFirstChar(message)
+            }}</span>
+          </ErrorMessage>
         </div>
         <div class="w-full flex justify-center mt-6">
           <BaseButton type="submit">Submit</BaseButton>
@@ -33,6 +34,9 @@ import BaseButton from "@/components/UI/BaseButton.vue"
 import { BILLING_FIELDS, BILLING_SCHEMA } from "./constants/BILLING_FIELDS"
 
 import { checkoutOrder } from "@/graphql/mutations/checkoutOrder"
+
+const upperCaseFirstChar = input =>
+  input.charAt(0).toUpperCase() + input.slice(1)
 
 const handleSubmit = values => {
   const paymentMethod = "cod"
