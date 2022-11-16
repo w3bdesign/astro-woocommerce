@@ -64,7 +64,6 @@ const handleSubmit = values => {
 
   try {
     checkoutOrder(checkoutData).then(result => {
-      console.log("Result from checkoutOrder: ", result)
       if (result === "success") {
         location.href = "/success"
       } else {
