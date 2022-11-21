@@ -34,10 +34,8 @@ export async function fetchAxios(query, { variables } = {}) {
         axiosData.headers["woocommerce-session"]
     }
   } catch {
-    error => {
-      if (import.meta.env.DEV) {
-        console.log("Error: ", error)
-      }
+    if (import.meta.env.DEV) {
+      console.log("Error ")
     }
   }
 
