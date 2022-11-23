@@ -8,10 +8,17 @@
           class="w-1/2 p-2"
         >
           <label :for="field.inputId">{{ field.label }}</label>
-          <Field
-            class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
-            :name="field.inputId"
-          />
+          <Field :name="field.inputId" v-slot="{ field, meta }">
+            <input
+              v-bind="field"
+              class="w-full px-4 py-2 mt-2 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-black"
+              :class="[
+                meta.valid
+                  ? 'border-green-700 border-2'
+                  : 'border-red-500 border-2'
+              ]"
+            />
+          </Field>
           <ErrorMessage :name="field.inputId" v-slot="{ message }">
             <span class="text-lg text-red-500 font-bold">{{
               upperCaseFirstChar(message)
