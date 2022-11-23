@@ -1,1 +1,1 @@
-export const siteTitle = "Astro Woocommerce - "
+export const siteConfig = { siteTitle: "Astro Woocommerce - " }
