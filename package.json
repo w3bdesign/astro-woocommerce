@@ -25,7 +25,7 @@
     "@astrojs/image": "^0.12.1",
     "@headlessui/vue": "^1.7.7",
     "@nanostores/vue": "^0.6.1",
-    "algoliasearch": "^4.14.2",
+    "algoliasearch": "^4.14.3",
     "axios": "^1.2.1",
     "instantsearch.css": "^7.4.5",
     "nanostores": "^0.7.1",
