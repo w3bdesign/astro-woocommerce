@@ -29,7 +29,7 @@
     "axios": "^1.2.1",
     "instantsearch.css": "^7.4.5",
     "nanostores": "^0.7.1",
-    "sharp": "^0.31.2",
+    "sharp": "^0.31.3",
     "uid": "^2.0.1",
     "vee-validate": "^4.7.3",
     "vue-instantsearch": "^4.6.0",
