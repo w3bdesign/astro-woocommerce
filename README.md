@@ -1,8 +1,6 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_astro-woocommerce&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_astro-woocommerce)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2134b6e594884f489ad4dad6502c5a2a)](https://www.codacy.com/gh/w3bdesign/astro-woocommerce/dashboard?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/astro-woocommerce&utm_campaign=Badge_Grade)
 
-# This is currently a work in progress
-
 ## Astro/Vue 3 Ecommerce site with WooCommerce backend
 
 <img src="https://user-images.githubusercontent.com/45217974/106988377-f129a080-676f-11eb-94b9-a44c86ea6c79.png" alt="Project screenshot" />
