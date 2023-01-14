@@ -54,6 +54,8 @@ const addProduct = product => {
     addToCart(productQueryInput).then(result => {
       state.loading = false
 
+     
+
       if (!result) {
         localStorage.clear()
       }

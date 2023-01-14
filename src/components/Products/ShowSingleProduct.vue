@@ -51,6 +51,7 @@
                 id="variant"
                 name="variant"
                 class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline"
+                @change="changeVariation()"
               >
                 <option
                   v-for="(variation, index) in product.variations.nodes"
@@ -66,7 +67,7 @@
               <!-- Doesn't work?`-->
               <AddToCartButton
                 v-if="product.variations"
-                :product="variationProduct"
+                :product="selectedVariation"
                 client:visible
               />
               <AddToCartButton v-else :product="product" client:visible />
@@ -79,11 +80,24 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue"
+
 import { filteredVariantPrice, stripHTML } from "@/utils/functions"
 
 import AddToCartButton from "@/components/Cart/AddToCartButton.vue"
 
-defineProps(["product"])
+const props = defineProps(["product"])
 
-const variationProduct = 18 // Hardcoded variation ID
+const selectedVariation = ref(18)
+
+onMounted(() => {
+  if (props.product.variations) {
+    const firstVariant = props.product.variations.nodes[0].databaseId
+    selectedVariation.value = firstVariant
+  }
+})
+
+const changeVariation = event => {
+  selectedVariation.value = event.target.value
+}
 </script>
