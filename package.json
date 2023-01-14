@@ -1,6 +1,6 @@
 {
   "name": "astro-woocommerce",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format",
-    "format": "prettier --write \"**/*.{ts,tsx,json}\""
+    "format": "prettier --write \"**/*.{js,jsx,json}\""
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
