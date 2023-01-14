@@ -29,13 +29,17 @@ export async function fetchAxios(query, { variables } = {}) {
       }
     })
 
+    if (import.meta.env.DEV && axiosData.data.errors[0].message) {
+      console.log("Error:  ", axiosData.data.errors[0].message)
+    }
+
     if (!localStorage["woocommerce-session"]) {
       localStorage["woocommerce-session"] =
         axiosData.headers["woocommerce-session"]
     }
-  } catch {
-    if (import.meta.env.DEV) {
-      console.log("Error ")
+  } catch (e) {
+    if (import.meta.env.DEV && axiosData.data.errors) {
+      console.log("Error: ", e)
     }
   }
 
