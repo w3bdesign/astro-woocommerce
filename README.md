@@ -74,6 +74,7 @@ The current release has been tested and is confirmed working with the following 
 -   Form handling and validation with Vee Validate and Yup
 -   Checkout process
 -   Animated mobile menu
+-   Stock quantity on products
 
 ## Troubleshooting
 

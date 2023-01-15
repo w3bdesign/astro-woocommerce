@@ -23,12 +23,14 @@ export async function getSingleProduct(id) {
         salePrice
         regularPrice
         databaseId
+        stockQuantity
       }
       ... on VariableProduct {
         price
         salePrice
         regularPrice
         databaseId
+        stockQuantity
         paColors {
           nodes {
             name
