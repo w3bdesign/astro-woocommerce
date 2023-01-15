@@ -43,10 +43,16 @@
               {{ stripHTML(product.description) }}
             </p>
             <p
+              v-if="product.stockQuantity"
+              class="pt-1 mt-4 text-2xl text-gray-900"
+            >
+              {{ product.stockQuantity }} in stock
+            </p>
+            <p
               v-if="product.variations"
               class="pt-1 mt-4 text-xl text-gray-900"
             >
-              <span class="py-2">Varianter</span>
+              <span class="py-2">Variants</span>
               <select
                 id="variant"
                 name="variant"
@@ -59,7 +65,7 @@
                   :value="variation.databaseId"
                   :selected="index === 0"
                 >
-                  {{ variation.name }}
+                  {{ variation.name }} ({{ variation.stockQuantity }} in stock)
                 </option>
               </select>
             </p>
