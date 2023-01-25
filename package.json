@@ -13,16 +13,16 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "2.1.3",
-    "@astrojs/vercel": "2.4.0",
+    "@astrojs/tailwind": "3.0.0",
+    "@astrojs/vercel": "3.0.0",
     "@astrojs/vue": "^1.2.2",
-    "astro": "1.9.2",
+    "astro": "2.0.1",
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.7.2",
     "vue": "^3.2.45"
   },
   "dependencies": {
-    "@astrojs/image": "^0.12.1",
+    "@astrojs/image": "^0.13.0",
     "@headlessui/vue": "^1.7.7",
     "@nanostores/vue": "^0.6.1",
     "algoliasearch": "^4.14.3",
