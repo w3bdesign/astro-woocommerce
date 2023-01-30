@@ -12,7 +12,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json}\""
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/sitemap": "^1.0.1",
     "@astrojs/tailwind": "3.0.0",
     "@astrojs/vercel": "3.0.0",
     "@astrojs/vue": "^2.0.0",
