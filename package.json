@@ -22,7 +22,7 @@
     "vue": "^3.2.45"
   },
   "dependencies": {
-    "@astrojs/image": "^0.13.1",
+    "@astrojs/image": "^0.14.0",
     "@headlessui/vue": "^1.7.8",
     "@nanostores/vue": "^0.6.1",
     "algoliasearch": "^4.14.3",
