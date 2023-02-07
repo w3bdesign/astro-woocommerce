@@ -31,7 +31,7 @@
     "nanostores": "^0.7.3",
     "sharp": "^0.31.3",
     "uid": "^2.0.1",
-    "vee-validate": "^4.7.3",
+    "vee-validate": "^4.7.4",
     "vue-instantsearch": "^4.8.2",
     "yup": "^0.32.11"
   }
