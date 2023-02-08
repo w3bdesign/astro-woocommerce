@@ -33,6 +33,6 @@
     "uid": "^2.0.1",
     "vee-validate": "^4.7.4",
     "vue-instantsearch": "^4.8.3",
-    "yup": "^0.32.11"
+    "yup": "^1.0.0"
   }
 }
