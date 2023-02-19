@@ -1,3 +1,7 @@
+# This project has been archived as I am focusing my efforts on https://github.com/w3bdesign/nuxtjs-woocommerce and https://github.com/w3bdesign/nextjs-woocommerce
+
+<hr>
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_astro-woocommerce&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=w3bdesign_astro-woocommerce)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2134b6e594884f489ad4dad6502c5a2a)](https://www.codacy.com/gh/w3bdesign/astro-woocommerce/dashboard?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/astro-woocommerce&utm_campaign=Badge_Grade)
 
